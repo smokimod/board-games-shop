@@ -1,0 +1,38 @@
+.additional-games-block {
+  margin: 40px 60px;
+  box-shadow: 2px 2px 5px rgb(241, 254, 0), -2px -2px 15px rgb(241, 254, 0);
+}
+.additional-games-container {
+  height: 580px;
+  max-width: 1400px;
+  padding: 10px 15px;
+}
+.additional-games-content {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.additional-item {
+  flex-basis: 280px;
+  height: 210px;
+  border-radius: 20px;
+  margin: 0 30px;
+  background-repeat: no-repeat !important;
+  background-size: 320px !important;
+  background-position: center !important;
+  box-shadow: inset 0px -60px 70px 10px rgba(1, 1, 1, 0.6);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-grow: 0.5;
+}
+.additional-item.grow {
+  flex-grow: 9;
+}
+.rel-href {
+  height: 100%;
+}

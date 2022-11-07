@@ -1,0 +1,79 @@
+.actual-realises-block {
+  margin: 40px 60px;
+}
+.actual-realises-container {
+  height: 400px;
+  max-width: 1400px;
+  padding: 10px 15px;
+}
+
+.actual-realises-info {
+  height: 100%;
+  display: flex;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.actual-realises-content {
+  background-color: antiquewhite;
+  width: 70%;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: inset 40px 30px 70px 10px rgb(254, 216, 3),
+    inset -40px -30px 70px 10px rgb(254, 216, 3);
+}
+.actual-game {
+  padding: 30px 0;
+  height: 100%;
+  width: 20%;
+  text-align: center;
+}
+.actual-game div {
+  min-height: 15em;
+  width: 100%;
+  overflow: hidden;
+}
+.actual-game img {
+  width: 12em;
+  height: 15em;
+}
+.actual-game span {
+  color: green;
+  font-weight: 800;
+  font-size: 24px;
+}
+.actual-date {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 30%;
+}
+.actual-realises-block.autumn {
+  background: url("./images/autumn-park-leaves-sun-1053614486.jpg"), no-repeat;
+  background-size: cover;
+}
+.actual-realises-block.winter {
+  background: url("./images/winter_time_with_a_lot_of_fun_1.jpg"), no-repeat;
+  background-size: cover;
+}
+.actual-realises-block.spring {
+  background: url("./images//spring-blossom.jpg"), no-repeat;
+  background-size: cover;
+}
+.actual-realises-block.summer {
+  background: url("./images//5356755_062119-cc-ss-summer-sun-img.jpg");
+  background-size: cover;
+}
+
+.actual-date span {
+  display: block;
+  font-weight: 800;
+  font-size: 25px;
+  margin: 25px;
+}
+.item_button.actual {
+  width: 75%;
+  margin: 25px;
+}

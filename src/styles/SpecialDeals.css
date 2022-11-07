@@ -1,0 +1,83 @@
+.special_deal_container {
+  height: 500px;
+  width: 100vw;
+  background: center, no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: inset 0px -150px 90px 100px rgba(1, 1, 1, 0.6);
+}
+
+.special_deal_content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.special_deal_info {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  text-align: center;
+}
+.deal_info {
+  width: 1000px;
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: white;
+}
+
+.deal_side_button-2,
+.deal_side_button-1 {
+  height: 100%;
+  width: 10%;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+  width: 4rem !important;
+  height: 4rem !important;
+  border-radius: 40px;
+  background-color: rgb(249, 3, 3) !important;
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+  width: 4rem !important;
+  height: 4rem !important;
+  border-radius: 40px;
+  background-color: rgb(249, 3, 3) !important;
+}
+.slick-slider {
+  height: 400px !important;
+  margin: 20px 0;
+  box-shadow: inset 40px 30px 70px 10px rgb(254, 216, 3),
+    inset -40px -30px 70px 10px rgb(254, 216, 3);
+}
+.slider-info {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  box-shadow: inset 0px -150px 100px 100px rgba(1, 1, 1, 0.6);
+}
+.slider-info p,
+h1 {
+  margin: 10px;
+  width: 60%;
+  text-align: center;
+  color: gold;
+  font-weight: 800;
+}

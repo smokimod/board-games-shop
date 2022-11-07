@@ -1,0 +1,53 @@
+header {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(240, 239, 240);
+  border-radius: 0;
+  box-shadow: 0 1px 8px 3px rgb(174, 174, 174);
+  background: url("https://images.pexels.com/photos/163999/pexels-photo-163999.jpeg?cs=srgb&dl=pexels-fwstudio-163999.jpg&fm=jpg"),
+    no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 99;
+  flex-shrink: 0;
+}
+.menu_container {
+  padding: 10px;
+}
+.ui.input.price {
+  width: 8em;
+  font-size: 0.8rem;
+  height: 39px;
+}
+
+.ui.icon.input {
+  width: 20em;
+  height: 1.9em;
+  margin-left: 15px;
+}
+.ui.icon.input button {
+  padding: 5px 13px;
+  margin-left: 5px;
+  background-color: rgba(0, 208, 255, 0.783);
+}
+
+.menu {
+  width: 100vw;
+  border-bottom: solid 0.5px grey;
+  display: flex;
+  justify-content: center;
+}
+
+.menu_items {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

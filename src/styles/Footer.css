@@ -1,0 +1,37 @@
+.footer-block {
+  background-color: dimgrey;
+  background: url("https://images.pexels.com/photos/163999/pexels-photo-163999.jpeg?cs=srgb&dl=pexels-fwstudio-163999.jpg&fm=jpg"),
+    no-repeat;
+  background-position: center;
+  background-size: contain;
+  flex-shrink: 0;
+}
+.footer-container {
+  margin: 30px;
+  padding: 25px 25px;
+  height: 250px;
+}
+.footer-origin {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+.contact,
+.footer-menu,
+.our-partners,
+.footer-email {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-color: white;
+  padding: 0 15px;
+  font-size: 16px;
+}
