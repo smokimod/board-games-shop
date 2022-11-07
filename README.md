@@ -1,1 +1,1 @@
-https://away.vk.com/away.php
+https://boardgames-shop-smokimod.vercel.app/
