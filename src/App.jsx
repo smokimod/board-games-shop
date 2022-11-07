@@ -16,6 +16,7 @@ const App = () => {
   useEffect(() => {
     const getData = async () => {
       setLoaded(true);
+
       return dispatch(getBoardGamesData());
     };
     getData().catch(setLoaded(true), setError(error));
