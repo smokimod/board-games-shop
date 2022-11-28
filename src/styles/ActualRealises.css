@@ -1,17 +1,17 @@
 .actual-realises-block {
   margin: 40px 60px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .actual-realises-container {
-  height: 400px;
   max-width: 1400px;
   padding: 10px 15px;
+  min-height: 100%;
 }
 
 .actual-realises-info {
-  height: 100%;
   display: flex;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  justify-content: center;
 }
 
 .actual-realises-content {
@@ -26,14 +26,12 @@
 }
 .actual-game {
   padding: 30px 0;
-  height: 100%;
   width: 20%;
   text-align: center;
 }
 .actual-game div {
   min-height: 15em;
   width: 100%;
-  overflow: hidden;
 }
 .actual-game img {
   width: 12em;
@@ -42,7 +40,7 @@
 .actual-game span {
   color: green;
   font-weight: 800;
-  font-size: 24px;
+  font-size: 18px;
 }
 .actual-date {
   display: flex;
@@ -73,7 +71,16 @@
   font-size: 25px;
   margin: 25px;
 }
-.item_button.actual {
-  width: 75%;
-  margin: 25px;
+.item_button-actual {
+  width: 300px;
+  height: 50px;
+  padding: 20px 20px;
+}
+.actual-heading {
+  font-size: 24px;
+  padding: 0px 15px;
+  font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida,
+    Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  color: white;
 }

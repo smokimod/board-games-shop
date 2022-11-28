@@ -11,6 +11,8 @@
   align-items: center;
   justify-content: space-around;
   height: 100%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .realises_column {
@@ -18,30 +20,29 @@
   flex-direction: column;
 }
 .rel_container_item {
-  width: 280px;
+  width: 400px;
   height: 210px;
-  margin: 10px 0;
-  border-radius: 20px;
+  margin: 10px 20px;
+  border-radius: 15px;
   background: rgb(238, 174, 202);
   background: radial-gradient(
     circle,
     rgba(238, 174, 202, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
-  background-repeat: no-repeat, center !important;
-  background-size: 320px !important;
-  background-position: center !important;
-  box-shadow: inset 0px -60px 70px 10px rgba(1, 1, 1, 0.6);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-repeat: no-repeat;
+  background-size: 320px;
+  background-position: center;
+  box-shadow: inset 0px -10px 70px 5px rgba(1, 1, 1, 0.6),
+    inset 0px 10px 70px 5px rgba(1, 1, 1, 0.6);
 }
 
 .rel_container_bigItem {
   width: 500px;
   height: 440px;
   border-radius: 20px;
-  background: url("https://i0.wp.com/www.boardgameanalysis.com/wp-content/uploads/2017/04/Catan-CloseupGameplay-2149-Edit.jpg?fit=1200%2C798&ssl=1&w=640"),
-    no-repeat, center;
+  background: url("https://i0.wp.com/www.boardgameanalysis.com/wp-content/uploads/2017/04/Catan-CloseupGameplay-2149-Edit.jpg?fit=1200%2C798&ssl=1&w=640");
+  background-size: cover;
   box-shadow: inset 0px 150px 70px 10px rgba(1, 1, 1, 0.6);
   color: white;
 }
@@ -64,9 +65,9 @@
 }
 
 .item_button {
-  width: 120px;
+  max-width: 100px;
   height: 40px;
-  border-radius: 20px;
+  border-radius: 15px;
   border: none orange;
   padding: 10px;
   margin: 10px 25px;

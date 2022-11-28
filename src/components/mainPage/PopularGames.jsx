@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/PopularGames.css";
-import { PopularGamesChildren } from "./componentsChildren/PopularGamesChildren";
+import "../../styles/PopularGames.css";
+import { PopularGamesChildren } from "../componentsChildren/PopularGamesChildren";
 
 export const PopularGames = () => {
   return (

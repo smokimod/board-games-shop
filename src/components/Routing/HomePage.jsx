@@ -2,10 +2,10 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { getBoardGamesData } from "../../Redux/actions/apiActions";
-import { PopularGames } from "../PopularGames";
-import { SpecialDeals } from "../SpecialDeals";
-import { AdditionPopularGames } from "../componentsChildren/AdditionPopularGames";
-import { ActualRealises } from "../ActualRealises";
+import { PopularGames } from ".././mainPage/PopularGames";
+import { SpecialDeals } from ".././mainPage/SpecialDeals";
+import { AdditionPopularGames } from "../mainPage/AdditionPopularGames";
+import { ActualRealises } from "../mainPage/ActualRealises";
 
 export const HomePage = () => {
   const [loaded, setLoaded] = useState(false);
@@ -23,7 +23,7 @@ export const HomePage = () => {
     <>
       {error ? (
         <div className="error-background">
-          <i class="thumbs down outline icon"></i>
+          <i className="thumbs down outline icon"></i>
           Opps...: {error.message}
         </div>
       ) : !loaded ? (
@@ -35,7 +35,7 @@ export const HomePage = () => {
       ) : (
         <>
           <SpecialDeals />
-          <PopularGames />
+          {/* <PopularGames /> */}
           <AdditionPopularGames />
           <ActualRealises />
         </>

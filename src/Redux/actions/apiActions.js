@@ -1,21 +1,25 @@
 import axios from "axios";
-import { getGames } from "../reducers/gamesReducer";
-import { getRandomGames } from "../reducers/randomGamesReducer";
-import { getSpecialGames } from "../reducers/specialsReducer";
+import {
+  getGames,
+  getPopularGames,
+  getSpecialGames,
+} from "../reducers/gamesReducer";
 
-export const getBoardGamesData = () => async (dispatch) => {
-  const responseGames = await axios.get(
-    "https://api.boardgameatlas.com/api/search?name=Catan&client_id=VqVYih77GT"
-  );
-  dispatch(getGames(responseGames));
+export const getBoardGamesData =
+  (skip = 0, handle = "Catan") =>
+  async (dispatch) => {
+    const responseGames = await axios.get(
+      `https://api.boardgameatlas.com/api/search?name=${handle}&skip=${skip}&limit=25&client_id=VqVYih77GT`
+    );
+    dispatch(getGames(responseGames));
 
-  const responsesRandomGames = await axios.get(
-    "https://api.boardgameatlas.com/api/search?name=Catan&ascending=false&pretty=true&client_id=VqVYih77GT"
-  );
-  dispatch(getRandomGames(responsesRandomGames));
+    const responsesPopularGames = await axios.get(
+      "https://api.boardgameatlas.com/api/search?&ascending=false&pretty=true&client_id=VqVYih77GT"
+    );
+    dispatch(getPopularGames(responsesPopularGames));
 
-  const responsesSpecialGames = await axios.get(
-    `https://api.boardgameatlas.com/api/search?gt_discount=0.5&pretty=true&client_id=VqVYih77GT`
-  );
-  dispatch(getSpecialGames(responsesSpecialGames));
-};
+    const responsesSpecialGames = await axios.get(
+      `https://api.boardgameatlas.com/api/search?gt_discount=0.5&pretty=true&client_id=VqVYih77GT`
+    );
+    dispatch(getSpecialGames(responsesSpecialGames));
+  };

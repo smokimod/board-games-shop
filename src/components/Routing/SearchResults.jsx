@@ -2,9 +2,11 @@ import React from "react";
 import "../../styles/SearhResulets.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { PaginationBar } from "./Pagination";
 
-export const SearchResults = ({ itemsPerPage }) => {
-  const games = useSelector((state) => state.games);
+export const SearchResults = () => {
+  const games = useSelector((state) => state.games.games);
+  const sample = useSelector((state) => state.sample.value);
 
   const arr = [1, 2, 3].map((i) => {
     return (
@@ -17,39 +19,18 @@ export const SearchResults = ({ itemsPerPage }) => {
     );
   });
 
-  const gamesList = games.map((item) => {
-    return (
-      <div className="search-game" key={item.id}>
-        <div>
-          <img src={item.image_url} alt={item.images.original} />
-        </div>
-        <h3>{item.name}</h3>
-        <span>$ {item.price}</span>
-      </div>
-    );
-  });
-
   return (
     <div className="search-block">
       <div className="search-container">
         <div className="search-categories">
-          <h2>Search By:</h2>
+          <h2>Search By </h2>
           {arr}
         </div>
         <div className="search-results">
           <div className="results-info">
-            <h2>Results of Search</h2>
-            <div className="ui icon big input">
-              <input type="text" placeholder="Search..." />
-              <NavLink to="/searchResults">
-                <button className="ui icon button" style={{ height: "100%" }}>
-                  <i className="search icon" />
-                </button>
-              </NavLink>
-            </div>
+            <h2>Results of Search: {sample}</h2>
           </div>
-          <div className="searched-games">{gamesList}</div>
-          <div>Pagination</div>
+          <PaginationBar />
         </div>
       </div>
     </div>

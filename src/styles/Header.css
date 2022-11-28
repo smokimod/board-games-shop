@@ -1,5 +1,5 @@
 header {
-  height: 100px;
+  height: 120px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -11,21 +11,14 @@ header {
   background-position: center;
   background-size: contain;
   z-index: 99;
-  flex-shrink: 0;
 }
 .menu_container {
-  padding: 10px;
-}
-.ui.input.price {
-  width: 8em;
-  font-size: 0.8rem;
-  height: 39px;
+  margin: 5px;
 }
 
 .ui.icon.input {
   width: 20em;
   height: 1.9em;
-  margin-left: 15px;
 }
 .ui.icon.input button {
   padding: 5px 13px;
@@ -42,6 +35,7 @@ header {
 
 .menu_items {
   width: 90vw;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
 }

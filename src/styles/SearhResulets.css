@@ -19,7 +19,6 @@
   max-width: 80%;
   height: 100%;
   margin-left: 30px;
-  background-color: gainsboro;
 }
 .results-info {
   display: flex;
@@ -28,31 +27,4 @@
   height: 10%;
   text-align: start;
   font-weight: 800;
-}
-
-.searched-games {
-  display: flex;
-  flex-wrap: wrap;
-  height: 90%;
-  padding: 20px;
-}
-
-.search-game {
-  padding: 20px 0;
-  min-height: 100%;
-  width: 20%;
-  text-align: center;
-}
-.search-game div {
-  min-height: 15em;
-  width: 100%;
-}
-.search-game img {
-  width: 12em;
-  height: 15em;
-}
-.search-game span {
-  color: green;
-  font-weight: 800;
-  font-size: 24px;
 }

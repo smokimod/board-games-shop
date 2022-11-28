@@ -1,8 +1,8 @@
 import React from "react";
 import "./style.css";
 import "./styles/AdditionalPopularGames.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/mainPage/Header";
+import Footer from "./components/mainPage/Footer";
 import { Outlet } from "react-router";
 
 const Layout = () => {
