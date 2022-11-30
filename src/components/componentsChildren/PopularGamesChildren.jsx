@@ -4,14 +4,13 @@ import { NavLink } from "react-router-dom";
 
 export const PopularGamesChildren = () => {
   const games = useSelector((state) => state.popular.games);
-
   return (
-    <React.Fragment>
+    <>
       <div className="realises_column">
         <div
           className="rel_container_item"
           style={
-            games && games.length > 0
+            games && games.length > 0 && games[1].image_url
               ? { backgroundImage: `url(${games[1].image_url})` }
               : games
           }
@@ -33,7 +32,7 @@ export const PopularGamesChildren = () => {
           </button>
         </div>
       </div>
-      <div className="rel_container_bigItem">
+      {/* <div className="rel_container_bigItem">
         <h2>Search Game You Would like!</h2>
         <NavLink
           to={`/searchResults/`}
@@ -41,8 +40,8 @@ export const PopularGamesChildren = () => {
         >
           Search Among Popular Games!
         </NavLink>
-      </div>
-      <div className="realises_column">
+      </div> */}
+      {/* <div className="realises_column">
         <div
           className="rel_container_item"
           style={
@@ -67,8 +66,7 @@ export const PopularGamesChildren = () => {
             <NavLink className="">Show Info</NavLink>
           </button>
         </div>
-      </div>
-    </React.Fragment>
+      </div> */}
+    </>
   );
 };
-export default PopularGamesChildren;

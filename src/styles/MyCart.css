@@ -1,0 +1,28 @@
+.cart-block {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  border: solid 1px;
+}
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 700px;
+  min-width: 1200px;
+  margin: 20px;
+}
+.your-cart {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px;
+}
+.cart-warning {
+  margin: 20px;
+  font-size: 24px;
+  text-align: center;
+  display: block;
+}
+.cart-purchases {
+  margin: 20px;
+  font-size: 24px;
+}

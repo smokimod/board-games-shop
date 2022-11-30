@@ -7,16 +7,17 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getBoardGamesData } from "./Redux/actions/apiActions";
 import { GameInfo } from "./components/Routing/GameInfo";
+import { MyCart } from "./components/Routing/MyCart";
 
 const App = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    const getData = async () => {
-      return dispatch(getBoardGamesData());
-    };
-    getData();
-  }, [dispatch]);
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     return dispatch(getBoardGamesData());
+  //   };
+  //   getData();
+  // }, [dispatch]);
 
   return (
     <Routes>
@@ -27,6 +28,7 @@ const App = () => {
           <Route path=":nam" element={<SearchResults />}></Route>
         </Route>
         <Route path="gameInfo" element={<GameInfo />}></Route>
+        <Route path="myCart" element={<MyCart />}></Route>
       </Route>
     </Routes>
   );

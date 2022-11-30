@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { getBoardGamesData } from "../../Redux/actions/apiActions";
-import { PopularGames } from ".././mainPage/PopularGames";
+import { PopularGames } from "../PopularGames";
 import { SpecialDeals } from ".././mainPage/SpecialDeals";
 import { AdditionPopularGames } from "../mainPage/AdditionPopularGames";
 import { ActualRealises } from "../mainPage/ActualRealises";
@@ -28,9 +28,7 @@ export const HomePage = () => {
         </div>
       ) : !loaded ? (
         <div className="loader-position">
-          <div className="ui massive active centered inline loader">
-            Loading...
-          </div>
+          <div className="ui massive active  inline loader">Loading...</div>
         </div>
       ) : (
         <>

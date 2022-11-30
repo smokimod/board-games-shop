@@ -30,7 +30,7 @@ const Header = () => {
           </aside>
           <div>
             {/* <GoogleAuth /> */}
-            <NavLink to="/gameInfo">
+            <NavLink to="/myCart">
               <div className="ui vertical animated button" tabIndex="0">
                 <div className="hidden content active">Shop</div>
                 <div className="visible content">

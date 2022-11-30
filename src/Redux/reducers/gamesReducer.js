@@ -2,7 +2,7 @@ const GET_GAMES_DATA = "GET_GAMES_DATA";
 const GET_POPULAR_GAMES = "GET_POPULAR_GAMES";
 const SPECIAL_GAMES_DATA = "SPECIAL_GAMES_DATA";
 
-export const gamesList = (state = { data: [] }, action) => {
+export const gamesReducer = (state = { data: [] }, action) => {
   switch (action.type) {
     case GET_GAMES_DATA:
       return action.payload.data;
@@ -11,7 +11,7 @@ export const gamesList = (state = { data: [] }, action) => {
   }
 };
 
-export const popularGames = (state = { data: [] }, action) => {
+export const popularReducer = (state = { data: [] }, action) => {
   switch (action.type) {
     case GET_POPULAR_GAMES:
       return action.payload.data;
@@ -20,7 +20,7 @@ export const popularGames = (state = { data: [] }, action) => {
   }
 };
 
-export const specialGames = (state = { data: [] }, action) => {
+export const specialReducer = (state = { data: [] }, action) => {
   switch (action.type) {
     case SPECIAL_GAMES_DATA:
       return action.payload.data;

@@ -72,8 +72,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   box-shadow: inset 0px -150px 100px 100px rgba(1, 1, 1, 0.6);
 }
-.slider-info p,
-h1 {
+.slider-info p {
   margin: 10px;
   width: 70%;
   max-height: 100%;

@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { PaginationBar } from "./Pagination";
 
 export const SearchResults = () => {
-  const games = useSelector((state) => state.games.games);
   const sample = useSelector((state) => state.sample.value);
 
   const arr = [1, 2, 3].map((i) => {

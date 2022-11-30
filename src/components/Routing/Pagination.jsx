@@ -1,14 +1,15 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Pagination, PaginationItem } from "@mui/material";
-import { useParams, NavLink, useNavigate, useLocation } from "react-router-dom";
+import { useParams, NavLink, useLocation } from "react-router-dom";
+import { cartHolder } from "../../Redux/reducers/cartReducers";
 const clientId = "client_id=VqVYih77GT";
 
 export const PaginationBar = () => {
   const location = useLocation();
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { nam } = useParams();
   const sample = useSelector((state) => state.sample.value);
   const [games, setGames] = useState([]);
@@ -36,8 +37,11 @@ export const PaginationBar = () => {
         }
       })
       .catch((error) => console.log(error.message));
-  }, [page, skip, pageQty, nam, navigate]);
+  }, [page, skip, pageQty, nam]);
 
+  const addToCart = (item) => {
+    dispatch(cartHolder(item));
+  };
   return (
     <>
       <div className="ui five doubling stackable cards">
@@ -82,13 +86,16 @@ export const PaginationBar = () => {
                     </div>
                   </div>
                   <div className="extra content">
-                    <div
+                    <button
+                      onClick={() => {
+                        addToCart(item);
+                      }}
                       className="ui attached yellow button"
                       style={{ color: "black" }}
                     >
                       <i className="shop red icon"></i>
                       Add to Cart
-                    </div>
+                    </button>
                   </div>
                 </div>
               );
