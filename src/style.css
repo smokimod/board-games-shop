@@ -5,11 +5,9 @@
 }
 
 main {
+  color:ivory;
   min-height: 100vh;
-  background: url("https://t3.ftcdn.net/jpg/03/91/92/66/360_F_391926635_7va77kCrDILgAviJJOBBgd93FxZbeyib.jpg"),
-    no-repeat;
-  background-size: contain;
-  background-position: center center;
+ 
   display: flex;
   flex-direction: column;
 }

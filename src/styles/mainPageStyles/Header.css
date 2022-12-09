@@ -21,9 +21,8 @@ header {
   height: 1.9em;
 }
 .ui.icon.input button {
-  padding: 5px 13px;
+  padding: 5px 15px;
   margin-left: 5px;
-  background-color: rgba(0, 208, 255, 0.783);
 }
 
 .menu {
@@ -45,3 +44,10 @@ header {
   top: 0;
   width: 100%;
 }
+ 
+ .item.header-logo{
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform:uppercase !important;
+  color: red ;
+ }

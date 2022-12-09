@@ -1,7 +1,8 @@
 import React from "react";
+import "../../styles/mainPageStyles/ActualRealises.css";
 import { useSelector } from "react-redux";
-import "../../styles/ActualRealises.css";
 import { NavLink } from "react-router-dom";
+import { ActualGamesList } from "./mainPage-children/ActualGamesList";
 
 export const ActualRealises = () => {
   const current = new Date();
@@ -24,17 +25,15 @@ export const ActualRealises = () => {
     games && games.length > 0
       ? games.slice(7, 11).map((item) => {
           return (
-            <div className="actual-game" key={item.id}>
-              <div>
-                <NavLink to={`/currentGame/${item.id}`} className="slider-info">
-                  <img src={item.image_url} alt={item.images.original} />
-                </NavLink>
-              </div>
-              <h3 style={{ cursor: "default" }}>{item.name}</h3>
-              <span style={{ cursor: "default" }}>$ {item.price}</span>
-            </div>
+            <React.Fragment key={item.id}>
+              <ActualGamesList
+                id={item.id}
+                name={item.name}
+                image={item.image_url}
+                price={item.price}
+              />
+            </React.Fragment>
           );
-
           //   <div className="ui yellow card" key={item.id}>
           //     <div className="ui image">
           //       <NavLink
@@ -69,7 +68,7 @@ export const ActualRealises = () => {
           //   </div>
           // );
         })
-      : games;
+      : null;
 
   return (
     <div className={`actual-realises-block ${getMonth()}`}>

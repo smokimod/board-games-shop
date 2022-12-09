@@ -1,0 +1,58 @@
+.slick-next:before , .slick-prev:before{
+  font-size: 70px !important;
+}
+.deal_side_button-2,
+.deal_side_button-1 {
+  height: 100%;
+  width: 10%;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slick-prev {
+  left: 3% !important;
+  z-index: 1;
+  width: 4rem !important;
+  height: 4rem !important;
+ 
+}
+.slick-next {
+  right: 3% !important;
+  z-index: 1;
+  width: 4rem !important;
+  height: 4rem !important;
+
+}
+.slide{
+display: flex !important;
+justify-content: center  ;
+}
+
+.slick-slider {
+  height: 400px !important;
+  box-shadow: inset 130px 300px 40px 30px rgb(1, 1, 1),
+    inset -130px -300px 40px 30px rgb(0, 0, 0);
+}
+.slide-title{
+  color:rgb(189, 233, 99) ;
+  text-shadow: 1px 1px 10px #000, 3px 3px 10px rgb(154, 154, 154);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.slider-info:hover,
+.slider-info {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0 -150px 150px -10px rgba(1, 1, 1, 0.6);
+}
+.slider-info p {
+  margin: 10px;
+  width: 70%;
+  text-align: center;
+  color: gold;
+  font-size: 1.2rem;
+}

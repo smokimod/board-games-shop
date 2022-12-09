@@ -1,7 +1,7 @@
 import React from "react";
-import "../../styles/Footer.css";
+import "../../styles/mainPageStyles/Footer.css";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="footer-block">
       <div className="footer-container">
@@ -19,15 +19,15 @@ const Footer = () => {
             <nav>
               <a href="#top">To the Top</a>
             </nav>
-            <nav>To the News</nav>
-            <nav>About Shop</nav>
-            <nav>Events</nav>
+            <a>To the News</a>
+            <a>About Shop</a>
+            <a>Events</a>
           </div>
           <div className="our-partners">
             <h2>Our Partnerts</h2>
-            <nav>Tiny myths</nav>
-            <nav>Superior Ogre</nav>
-            <nav>Gaga Game Shop</nav>
+            <a>Tiny myths</a>
+            <a>Superior Ogre</a>
+            <a>Gaga Game Shop</a>
           </div>
           <div className="footer-email">
             <h2>Contact Us</h2>
@@ -42,5 +42,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

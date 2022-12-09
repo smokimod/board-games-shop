@@ -1,24 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Layout from "./Layout";
-import { HomePage } from "./components/Routing/HomePage";
-import { SearchResults } from "./components/Routing/SearchResults";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { getBoardGamesData } from "./Redux/actions/apiActions";
-import { GameInfo } from "./components/Routing/GameInfo";
-import { MyCart } from "./components/Routing/MyCart";
+import { Layout } from "./components/Layout/Layout";
+import { HomePage } from "./components/Layout/HomePage";
+import { SearchResults } from "./components/GamesCatalog/SearchResults";
+import { GameInfo } from "./components/GamesCatalog/GameInfo";
+import { MyCart } from "./components/GamesCatalog/MyCart";
 
 const App = () => {
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     return dispatch(getBoardGamesData());
-  //   };
-  //   getData();
-  // }, [dispatch]);
-
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

@@ -26,3 +26,14 @@
   margin: 20px;
   font-size: 24px;
 }
+.inc-dec-view{
+  display: flex;
+}
+.ui.secondary.massive.menu{
+  min-height: 100px !important;
+  background: url("https://images.pexels.com/photos/163999/pexels-photo-163999.jpeg?cs=srgb&dl=pexels-fwstudio-163999.jpg&fm=jpg"),
+  no-repeat;
+  background-position: center;
+  background-size: contain;
+
+}

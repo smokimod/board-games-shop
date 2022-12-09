@@ -1,12 +1,18 @@
 import React from "react";
-import { useState } from "react";
-import { useSelector } from "react-redux";
 import "../../styles/MyCart.css";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { cartDeleter } from "../../Redux/reducers/cartReducers";
+import { CartItems } from "./CartItems/CartItems";
 
 export const MyCart = () => {
   const cart = useSelector((state) => state.cart.itemsCart);
   const [count, setCount] = useState(0);
-  console.log(cart);
+  const dispatch = useDispatch();
+
+  const removeItem = (item) => {
+    dispatch(cartDeleter(item));
+  };
   return (
     <div className="cart-block">
       <section className="cart-container">
@@ -21,9 +27,10 @@ export const MyCart = () => {
           </span>
         </div>
         <div className="cart-purchases">
-          <table className="ui unstackable table">
+          <table className="ui fluid unstackable table">
             <thead>
               <tr>
+                <th></th>
                 <th>Photo</th>
                 <th>Name</th>
                 <th>Price</th>
@@ -34,25 +41,18 @@ export const MyCart = () => {
               {cart.length > 0 ? (
                 cart.map((item) => {
                   return (
-                    <tr key={item.id}>
-                      <td>
-                        <img src={item.images.small} />
-                      </td>
-                      <td>{item.name}</td>
-                      <td>
-                        <div>
-                          <button
-                            onClick={() =>
-                              setCount(count + Math.floor(Number(item.price)))
-                            }
-                          >
-                            click
-                          </button>
-                        </div>
-                        ${count}
-                      </td>
-                      <td className="right aligned">$35</td>
-                    </tr>
+                    <React.Fragment key={item.id}>
+                      <CartItems
+                        id={item.id}
+                        name={item.name}
+                        image={item.images.small}
+                        item={item}
+                        price={item.price}
+                        removeItem={removeItem}
+                        count={count}
+                        setCount={setCount}
+                      />
+                    </React.Fragment>
                   );
                 })
               ) : (

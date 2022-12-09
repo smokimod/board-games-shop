@@ -6,7 +6,6 @@
 }
 .additional-games-container {
   min-height: 550px;
-  max-width: 1400px;
   padding: 10px 15px;
 }
 .additional-games-content {
@@ -17,7 +16,7 @@
   flex-wrap: wrap;
 }
 .additional-item {
-  flex-basis: 280px;
+  flex-basis: 400px;
   height: 210px;
   border-radius: 15px;
   margin: 10px 10px;
@@ -30,23 +29,18 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
-  flex-grow: 1.8;
+  flex-grow: 2;
 }
 .additional-item.grow {
-  flex-grow: 1.8;
+  flex-grow: 2;
 }
 .additional-item h2 {
   color: white;
   padding: 20px;
 }
-.circular.medium.ui.button a {
-  height: 100% !important;
-  display: block !important;
-  text-align: center;
-}
 
 .heading {
-  font-size: 24px;
+  font-size: 1.6rem;
   padding: 0px 15px;
   font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida,
     Helvetica, Arial, sans-serif;

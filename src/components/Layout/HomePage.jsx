@@ -2,10 +2,10 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { getBoardGamesData } from "../../Redux/actions/apiActions";
-import { PopularGames } from "../PopularGames";
-import { SpecialDeals } from ".././mainPage/SpecialDeals";
-import { AdditionPopularGames } from "../mainPage/AdditionPopularGames";
-import { ActualRealises } from "../mainPage/ActualRealises";
+import { PopularGames } from "../MainPageResults/PopularGames";
+import { SpecialDeals } from "../MainPageResults/SpecialDeals";
+import { AdditionPopularGames } from "../MainPageResults/AdditionPopularGames";
+import { ActualRealises } from "../MainPageResults/ActualRealises";
 
 export const HomePage = () => {
   const [loaded, setLoaded] = useState(false);
@@ -33,7 +33,7 @@ export const HomePage = () => {
       ) : (
         <>
           <SpecialDeals />
-          {/* <PopularGames /> */}
+          <PopularGames />
           <AdditionPopularGames />
           <ActualRealises />
         </>
