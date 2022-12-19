@@ -6,12 +6,12 @@ import { Outlet } from "react-router";
 
 export const Layout = () => {
   return (
-    <main>
+    <>
       <Header />
-      <div className="Outlet-container">
+      <main>
         <Outlet />
-      </div>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 };

@@ -29,7 +29,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="ui secondary massive  menu">
+    <div className="ui secondary massive menu">
       <NavLink to="/" className="item header-logo">
         Game Board Shop
       </NavLink>
@@ -75,45 +75,3 @@ export const Header = () => {
     </div>
   );
 };
-{
-  /* <div className="menu" name="top">
-        <div className="menu_items">
-          <aside className="menu-items-email">
-            <NavLink to="/">
-              <h2>Ninja Shop</h2>
-              <div className="header-logo"></div>
-            </NavLink>
-          </aside>
-          <div>
-            <NavLink to="/myCart">
-              <div className="ui vertical animated button" tabIndex="0">
-                <div className="hidden content active">Shop</div>
-                <div className="visible content">
-                  <i className="shop big icon"></i>
-                  <span className={totalPrice ? "totalPrice" : ""}>
-                    {totalPrice ? `$ ${totalPrice.toFixed(2)}` : ""}
-                  </span>
-                </div>
-              </div>
-            </NavLink>
-          </div>
-        </div>
-      </div>
-      <div className="menu_container">
-        <div>
-          <form className="ui icon massive input" onSubmit={onSubmit}>
-            <input
-              type="text"
-              placeholder="Search..."
-              value={sample}
-              onChange={handleChange}
-            />
-            <Link to={`/searchResults/${sample}`}>
-              <button style={{ height: "100%" }} type="submit">
-                <i className="search icon" />
-              </button>
-            </Link>
-          </form>
-        </div>
-      </div> */
-}

@@ -48,19 +48,19 @@
 }
 .actual-realises-block.autumn {
   background: url("../images/autumn-park-leaves-sun-1053614486.jpg"), no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .actual-realises-block.winter {
   background: url("../images/winter_time_with_a_lot_of_fun_1.jpg"), no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .actual-realises-block.spring {
   background: url("../images//spring-blossom.jpg"), no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .actual-realises-block.summer {
   background: url("../images//5356755_062119-cc-ss-summer-sun-img.jpg");
-  background-size: cover;
+  background-size: contain;
 }
 
 .actual-date span {

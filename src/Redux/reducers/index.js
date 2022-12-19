@@ -4,7 +4,7 @@ import { authReducer } from "./authReducer";
 import { popularReducer } from "./gamesReducer";
 import { specialReducer } from "./gamesReducer";
 import { searchReducer } from "./searchReducer";
-import { cartReducer } from "./cartReducers";
+import { cartReducer, itemCouner } from "./cartReducers";
 
 export default combineReducers({
   games: gamesReducer,
@@ -13,4 +13,5 @@ export default combineReducers({
   specials: specialReducer,
   sample: searchReducer,
   cart: cartReducer,
+  counter: itemCouner
 });

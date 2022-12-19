@@ -11,11 +11,15 @@ export const ActualRealises = () => {
   const games = useSelector((state) => state.games.games);
 
   const getMonth = () => {
-    if (month === "September" || "October" || "November") {
+    if (month === "September" || month === "October" || month === "November") {
       return "autumn";
-    } else if (month === "December" || "Junuary" || "Febuary") {
+    } else if (
+      month === "декабрь" ||
+      month === "Junuary" ||
+      month === "Febuary"
+    ) {
       return "winter";
-    } else if (month === "Marth" || "April" || "May") {
+    } else if (month === "Marth" || month === "April" || month === "May") {
       return "spring";
     }
     return "summer";

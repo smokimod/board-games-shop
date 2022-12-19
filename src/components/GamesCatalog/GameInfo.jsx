@@ -32,30 +32,27 @@ export const GameInfo = () => {
   };
   return (
     <section className="gameInfo-block">
-      <div className="gameInfo-container">
-        {game && game.length >= 0
-          ? game.map((item) => (
-              <GameInfoDescription
-                key={item.id}
-                name={item.name}
-                price={item.price}
-                image={item.image_url}
-                description={item.description}
-                publisher={item.primary_publisher.name}
-                year={item.year_published}
-                time={item.playtime}
-                players={item.players}
-                rank={item.rank}
-                url={item.official_url}
-                addToCart={addToCart}
-                item={item}
-                isItemInCart={cart.some((game) => {
-                  return game.id === item.id;
-                })}
-              />
-            ))
-          : null}
-      </div>
+      {game && game.length >= 0
+        ? game.map((item) => (
+            <GameInfoDescription
+              key={item.id}
+              name={item.name}
+              price={item.price}
+              image={item.image_url}
+              publisher={item.primary_publisher.name}
+              year={item.year_published}
+              time={item.playtime}
+              players={item.players}
+              rank={item.rank}
+              url={item.official_url}
+              addToCart={addToCart}
+              item={item}
+              isItemInCart={cart.some((game) => {
+                return game.id === item.id;
+              })}
+            />
+          ))
+        : null}
     </section>
   );
 };

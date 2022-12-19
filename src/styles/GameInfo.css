@@ -1,62 +1,6 @@
 .gameInfo-block {
- 
-  border: solid 1px  black;
-  height: 900px;
   margin-bottom: 10px;
 }
-.gameInfo-container {
-  display:flex;
-  justify-content: center;
-  padding: 20px;
-}
 
 
-/* .game-image {
-  width: 350px;
-  height: 300px;
-}
-.game-charecters {
-  height: 30%;
-  width: 30%;
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  font-size: 18px;
-}
-.game-charecters div {
-  padding-bottom: 30px;
-  font-size: 20px;
-  font-weight: 800;
-}
-.game-description {
-  max-width: 80%;
-  font-weight: lighter;
-  text-align: justify;
-  border-top: solid 1px;
-  padding-top: 20px;
-  margin-bottom: 50px;
-}
 
-.game-order {
-  box-shadow: inset 0px -20px 70px 5px rgba(1, 1, 1, 0.6),
-    inset 0px 20px 70px 5px rgba(1, 1, 1, 0.6);
-  width: 20%;
-  height: 100%;
-  border-left: solid 1px;
-  padding: 10px;
-  text-align: center;
-  font-size: 25px;
-  font-weight: 800;
-  background-color: rgba(255, 231, 231, 0.678);
-}
-.game-order div {
-  padding: 15px 0;
-}
-
-.game-order button {
-  margin: 15px !important;
-}
-.game-share {
-  display: flex;
-  flex-direction: column;
-} */

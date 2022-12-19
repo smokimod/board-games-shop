@@ -1,3 +1,16 @@
+.gameInfo-container {
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+.game-description{
+  padding: 30px 50px;
+  margin: 10px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
 .game-info {
     padding: 50px;
     margin: 10px;
@@ -9,7 +22,7 @@
     width: 100%;
   }
   .game-img-container{
-    width: 50%;
+    width: 30%;
     height: 400px;
   }
   .game-img{
@@ -47,6 +60,4 @@
     font-weight: 800;
     font-size: 1.5rem;
   }
-  .info-buy{
-  }
-    
+ 

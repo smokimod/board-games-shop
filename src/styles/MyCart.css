@@ -1,20 +1,20 @@
 .cart-block {
-  margin: 20px;
+  margin: 20px 0 30px;
   display: flex;
   justify-content: center;
-  border: solid 1px;
+  min-height: 60vh !important;
+
 }
 .cart-container {
   display: flex;
   flex-direction: column;
-  min-height: 700px;
   min-width: 1200px;
   margin: 20px;
 }
 .your-cart {
   display: flex;
   justify-content: flex-start;
-  margin: 20px;
+  margin: 20px 0;
 }
 .cart-warning {
   margin: 20px;

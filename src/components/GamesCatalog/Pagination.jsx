@@ -30,6 +30,9 @@ export const PaginationBar = () => {
       dispatch(cartHolder(item));
     }
   };
+  const quantity={
+    quantity:1
+  }
 
   useEffect(() => {
     axios
@@ -64,6 +67,7 @@ export const PaginationBar = () => {
                     image={item.image_url}
                     item={item}
                     addToCart={addToCart}
+                    quantity={item.quantity=1}
                     isItemInCart={cart.some((game) => {
                       return game.id === item.id;
                     })}

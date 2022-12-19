@@ -1,15 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../styles/MyCart.css";
 
-export const CartItems = ({
-  id,
-  image,
-  price,
-  name,
-  removeItem,
-  count,
-  setCount,
-}) => {
+export const CartItems = ({ id, image, price, name, removeItem }) => {
+  const [counters, setCounters] = useState(1);
+
+  const increase = () => {
+    setCounters(counters + 1);
+  };
+  const decrease = () => {
+    setCounters(counters - 1);
+  };
   return (
     <tr>
       <td>
@@ -22,10 +22,15 @@ export const CartItems = ({
       </td>
       <td>{name}</td>
       <td>
-        <div className="inc-dec-view">
-          <button onClick={() => setCount(count + Number(price))}>+</button>
-          <div> ${count.toFixed(2)}</div>
-          <button onClick={() => setCount(count + Number(price))}>-</button>
+        <div>
+          <div className="inc-dec-view">
+            <button onClick={increase}>+</button>
+            <div>
+              {counters} X ${counters * price}
+            </div>
+
+            <button onClick={decrease}>-</button>
+          </div>
         </div>
       </td>
       <td className="right aligned">$35</td>
