@@ -1,63 +1,95 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/MyCart.css";
 import { useDispatch, useSelector } from "react-redux";
-import { cartDeleter } from "../../Redux/reducers/cartReducers";
+import {
+  cartDeleter,
+  cartQuantityAdd,
+  cartQuantityRemove,
+} from "../../Redux/reducers/cartReducers";
+
 import { CartItems } from "./CartItems/CartItems";
+import { ModalCartItems } from "./CartItems/ModalCartItems";
 
 export const MyCart = () => {
+  const [open, setOpen] = useState(false);
   const cart = useSelector((state) => state.cart.itemsCart);
   const dispatch = useDispatch();
+
+  const increase = (item) => {
+    dispatch(cartQuantityAdd(item));
+  };
+  const decrease = (item) => {
+    dispatch(cartQuantityRemove(item));
+  };
 
   const removeItem = (item) => {
     dispatch(cartDeleter(item));
   };
+
+  const totalPrice = cart.reduce(
+    (a, b) => a + Number(b.price) * Number(b.quantity),
+    0
+  );
   return (
-    <div className="cart-block">
-      <section className="ui main container">
-        <div className="your-cart">
-          <h1>Your Cart</h1>
-        </div>
-        <div className="ui bottom attached warning message">
-          <i className="exclamation triangle big icon"></i>
-          <span>
-            For futher purchases and status tracking you must be authorized on
-            website, we are higly recomend you to sign in.
-          </span>
-        </div>
-        <table className="ui fluid unstackable table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>Photo</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th className="right aligned">total</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cart.length > 0 ? (
-              cart.map((item) => {
-                return (
-                  <React.Fragment key={item.id}>
-                    <CartItems
-                      id={item.id}
-                      name={item.name}
-                      image={item.images.small}
-                      item={item}
-                      price={(Math.trunc(item.price * 100) / 100).toFixed(3)}
-                      removeItem={removeItem}
-                    />
-                  </React.Fragment>
-                );
-              })
-            ) : (
+    <>
+      <div className="cart-block">
+        <ModalCartItems open={open} setOpen={() => setOpen(false)} />
+        <section className="ui main container">
+          <div className="your-cart">
+            <h1>Your Cart</h1> <span></span>
+          </div>
+          <div className="ui bottom attached warning message">
+            <i className="exclamation triangle big icon"></i>
+            <span>
+              For futher purchases and status tracking you must be authorized on
+              website, we are higly recomend you to sign in.
+            </span>
+          </div>
+          <table className="ui fluid stackable table">
+            <thead>
               <tr>
-                <td>NOTHING HERE</td>
+                <th></th>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th className="right aligned">
+                  total {Number(totalPrice).toFixed(2)}
+                </th>
               </tr>
-            )}
-          </tbody>
-        </table>
-      </section>
-    </div>
+            </thead>
+            <tbody>
+              {cart.length > 0 ? (
+                cart.map((item) => {
+                  return (
+                    <React.Fragment key={item.id}>
+                      <CartItems
+                        id={item.id}
+                        name={item.name}
+                        image={item.images.small}
+                        item={item}
+                        price={item.price}
+                        removeItem={removeItem}
+                        quantity={item.quantity}
+                        increase={increase}
+                        decrease={decrease}
+                      />
+                    </React.Fragment>
+                  );
+                })
+              ) : (
+                <tr>
+                  <td>NOTHING HERE</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+          <div className="ui center aligned segment">
+            <button className="ui button primary" onClick={() => setOpen(true)}>
+              Make a purchase
+            </button>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };

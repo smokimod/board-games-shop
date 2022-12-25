@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../styles/MyCart.css";
 
-export const CartItems = ({ id, image, price, name, removeItem }) => {
-  const [counters, setCounters] = useState(1);
-
-  const increase = () => {
-    setCounters(counters + 1);
-  };
-  const decrease = () => {
-    setCounters(counters - 1);
-  };
+export const CartItems = ({
+  item,
+  image,
+  price,
+  name,
+  removeItem,
+  quantity,
+  increase,
+  decrease,
+}) => {
+  const totalItemPrice = quantity * price;
   return (
     <tr>
       <td>
-        <button onClick={() => removeItem(id)}>
+        <button onClick={() => removeItem(item)}>
           <i className="trash red centered icon" />
         </button>
       </td>
@@ -24,16 +26,22 @@ export const CartItems = ({ id, image, price, name, removeItem }) => {
       <td>
         <div>
           <div className="inc-dec-view">
-            <button onClick={increase}>+</button>
-            <div>
-              {counters} X ${counters * price}
-            </div>
-
-            <button onClick={decrease}>-</button>
+            <button onClick={() => increase(item)}>+</button>
+            <span>
+              {quantity} X ${price}
+            </span>
+            <button
+              onClick={() => decrease(item)}
+              disabled={quantity === 1 ? "disabled" : ""}
+            >
+              -
+            </button>
           </div>
         </div>
       </td>
-      <td className="right aligned">$35</td>
+      <td className="right aligned">
+        <span style={{ color: "green" }}>${totalItemPrice.toFixed(2)}</span>
+      </td>
     </tr>
   );
 };

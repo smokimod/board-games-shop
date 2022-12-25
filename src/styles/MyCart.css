@@ -1,9 +1,5 @@
 .cart-block {
-  margin: 20px 0 30px;
-  display: flex;
-  justify-content: center;
-  min-height: 60vh !important;
-
+  height: 100%;
 }
 .cart-container {
   display: flex;
@@ -26,14 +22,23 @@
   margin: 20px;
   font-size: 24px;
 }
-.inc-dec-view{
+.inc-dec-view {
   display: flex;
 }
-.ui.secondary.massive.menu{
+.ui.secondary.massive.menu {
   min-height: 100px !important;
   background: url("https://images.pexels.com/photos/163999/pexels-photo-163999.jpeg?cs=srgb&dl=pexels-fwstudio-163999.jpg&fm=jpg"),
-  no-repeat;
+    no-repeat;
   background-position: center;
   background-size: contain;
+}
 
+.ui.center.aligned.segment {
+  z-index: unset;
+}
+.ui.message {
+  position: unset;
+}
+.ui.segment {
+  position: unset;
 }

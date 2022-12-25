@@ -25,33 +25,33 @@ export const PaginationBar = () => {
   const addToCart = (item) => {
     const isItemInCart = cart.some((game) => game.id === item.id);
     if (isItemInCart) {
-      dispatch(cartDeleter(item.id));
+      dispatch(cartDeleter(item));
     } else {
       dispatch(cartHolder(item));
     }
   };
-  const quantity={
-    quantity:1
-  }
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.boardgameatlas.com/api/search?name=${
-          sample || nam ? nam : ""
-        }&skip=${skip}&limit=15&exact=false&${clientId}`
-      )
-      .then(({ data }) => {
-        setGames(data.games);
-        setPageQty(Math.ceil(data.count / 15));
-        setSkip(page * 15 - 15);
+    const getRequest = () => {
+      axios
+        .get(
+          `https://api.boardgameatlas.com/api/search?name=${
+            sample || nam ? nam : ""
+          }&skip=${skip}&limit=15&exact=false&${clientId}`
+        )
+        .then(({ data }) => {
+          setGames(data.games);
+          setPageQty(Math.ceil(data.count / 15));
+          setSkip(page * 15 - 15);
 
-        if (Math.ceil(data.count / 15) < page) {
-          setPage(1);
-        }
-      })
-      .catch((error) => console.log(error.message));
-  }, [page, skip, pageQty, nam]);
+          if (Math.ceil(data.count / 15) < page) {
+            setPage(1);
+          }
+        })
+        .catch((error) => console.log(error.message));
+    };
+    getRequest();
+  }, [page, skip, pageQty, sample, nam]);
 
   return (
     <>
@@ -67,7 +67,6 @@ export const PaginationBar = () => {
                     image={item.image_url}
                     item={item}
                     addToCart={addToCart}
-                    quantity={item.quantity=1}
                     isItemInCart={cart.some((game) => {
                       return game.id === item.id;
                     })}

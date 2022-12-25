@@ -6,7 +6,7 @@ import { CartIconGames } from "./CartIconGames/CartIconGames";
 export const CartHeaderIcon = () => {
   const cart = useSelector((state) => state.cart.itemsCart);
   const totalPrice = cart.reduce(
-    (acc, item) => (acc = Number(acc) + Number(item.price)),
+    (acc, item) => acc + Number(item.price) * Number(item.quantity),
     0
   );
 
@@ -22,6 +22,7 @@ export const CartHeaderIcon = () => {
                       key={item.id}
                       name={item.name}
                       price={item.price}
+                      quantity={item.quantity}
                     />
                   ))
                 : null}

@@ -1,21 +1,6 @@
-header {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgb(240, 239, 240);
-  border-radius: 0;
-  box-shadow: 0 1px 8px 3px rgb(174, 174, 174);
-  background: url("https://images.pexels.com/photos/163999/pexels-photo-163999.jpeg?cs=srgb&dl=pexels-fwstudio-163999.jpg&fm=jpg"),
-    no-repeat;
-  background-position: center;
-  background-size: contain;
-  z-index: 99;
+.ui.secondary.massive.menu {
+  margin-bottom: unset;
 }
-.menu_container {
-  margin: 5px;
-}
-
 .ui.icon.input {
   width: 20em;
   height: 1.9em;
@@ -25,29 +10,8 @@ header {
   margin-left: 5px;
 }
 
-.menu {
-  width: 100vw;
-  border-bottom: solid 0.5px grey;
-  display: flex;
-  justify-content: center;
-}
-
-.menu_items {
-  width: 90vw;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
- 
- .item.header-logo{
+.item.header-logo {
   font-weight: bold;
   font-size: 2rem;
-  text-transform:uppercase !important;
-  color: red ;
- }
+  text-transform: uppercase !important;
+}
