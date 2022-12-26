@@ -76,12 +76,6 @@ export const ModalCartItems = ({ open, setOpen }) => {
         aria-describedby="parent-modal-description"
       >
         <Box sx={{ ...style, width: 600, height: 200 }}>
-          <Stack direction="row" justifyContent="center" alignItems="center">
-            <Item>
-              <h1>Do you really want to make a purchase?</h1>
-            </Item>
-          </Stack>
-
           <ChildModal closeModal={setOpen} />
         </Box>
       </Modal>
