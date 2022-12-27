@@ -11,7 +11,7 @@ import { CartItems } from "./CartItems/CartItems";
 import { ModalCartItems } from "./CartItems/ModalCartItems";
 
 export const MyCart = () => {
-  const [open, setOpen] = useState(false);
+  const [modal, setModal] = useState(false);
   const cart = useSelector((state) => state.cart.itemsCart);
   const dispatch = useDispatch();
 
@@ -33,7 +33,7 @@ export const MyCart = () => {
   return (
     <>
       <div className="cart-block">
-        <ModalCartItems open={open} setOpen={() => setOpen(false)} />
+        <ModalCartItems modal={modal} setModal={() => setModal(false)} />
         <section className="ui main container">
           <div className="your-cart">
             <h1>Your Cart</h1> <span></span>
@@ -84,7 +84,11 @@ export const MyCart = () => {
             </tbody>
           </table>
           <div className="ui center aligned segment">
-            <button className="ui button primary" onClick={() => setOpen(true)}>
+            <button
+              className="ui button primary"
+              onClick={() => setModal(true)}
+              disabled={cart.length > 0 ? "" : "disabled"}
+            >
               Make a purchase
             </button>
           </div>

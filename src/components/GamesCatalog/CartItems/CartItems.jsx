@@ -1,7 +1,9 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../../../styles/MyCart.css";
 
 export const CartItems = ({
+  id,
   item,
   image,
   price,
@@ -20,7 +22,12 @@ export const CartItems = ({
         </button>
       </td>
       <td>
-        <img src={image} alt={require("../../../styles/images/no_image.png")} />
+        <NavLink to={`/currentGame/${id}`}>
+          <img
+            src={image}
+            alt={require("../../../styles/images/no_image.png")}
+          />
+        </NavLink>
       </td>
       <td>{name}</td>
       <td>

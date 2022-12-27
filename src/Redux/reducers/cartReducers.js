@@ -2,10 +2,10 @@ const ADD_CART = "ADD_CART";
 const DELETE_CART = "DELETE_CART";
 const ADD_QUANTITY = "ADD_QUANTITY";
 const REMOVE_QUANTITY = "REMOVE_QUANTITY";
+const CLEAR_CART = "CLEAR_CART";
 
 const initialState = {
   itemsCart: [],
-  totalPrice: 0,
 };
 
 export const cartReducer = (state = initialState, action) => {
@@ -66,6 +66,11 @@ export const cartReducer = (state = initialState, action) => {
         ...state,
         itemsCart: [...state.itemsCart, payload],
       };
+    case "CLEAR_CART":
+      return {
+        ...state,
+        itemsCart: [],
+      };
 
     default:
       return state;
@@ -87,5 +92,10 @@ export const cartQuantityAdd = (payload) => ({
 });
 export const cartQuantityRemove = (payload) => ({
   type: REMOVE_QUANTITY,
+  payload,
+});
+
+export const cartClear = (payload) => ({
+  type: CLEAR_CART,
   payload,
 });

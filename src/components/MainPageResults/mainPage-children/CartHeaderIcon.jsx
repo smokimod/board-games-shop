@@ -1,14 +1,19 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { cartClear } from "../../../Redux/reducers/cartReducers";
 import "../../../styles/mainPageStyles/CartHeaderIcon.css";
 import { CartIconGames } from "./CartIconGames/CartIconGames";
 
 export const CartHeaderIcon = () => {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.itemsCart);
   const totalPrice = cart.reduce(
     (acc, item) => acc + Number(item.price) * Number(item.quantity),
     0
   );
+  const clearCart = () => {
+    dispatch(cartClear([]));
+  };
 
   return (
     <>
@@ -34,6 +39,9 @@ export const CartHeaderIcon = () => {
                   <span style={{ color: "green" }}>
                     ${totalPrice.toFixed(2)}
                   </span>
+                  <button onClick={clearCart} className="ui primary button">
+                    Clear cart
+                  </button>
                 </div>
               </div>
             ) : null}
