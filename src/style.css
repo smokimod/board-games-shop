@@ -5,12 +5,15 @@
 }
 
 main {
+  background-color: ivory;
   min-height: 100vh;
-  min-width: 100vw;
+
   display: flex;
   flex-direction: column;
 }
-
+.Outlet-container {
+  flex: 1 0 auto;
+}
 .medium.ui.button {
   margin: 15px;
 }
