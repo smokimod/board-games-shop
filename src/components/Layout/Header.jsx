@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import GoogleAuth from "../../GoogleAuth";
 import "../../styles/mainPageStyles/Header.css";
 import CasinoIcon from "@mui/icons-material/Casino";
-
+import SearchIcon from "@mui/icons-material/Search";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useNavigate } from "react-router-dom";
+import { CartHeaderIcon } from "../MainPageResults/mainPage-children/CartHeaderIcon";
 import {
   AppBar,
   IconButton,
@@ -13,10 +15,11 @@ import {
   Stack,
   Button,
   TextField,
+  InputAdornment,
+  Badge,
 } from "@mui/material";
-import { CatchingPokemon } from "@mui/icons-material";
-
 export const Header = () => {
+  const history = useNavigate();
   const [isHovering, setIsHovering] = useState(false);
   const dispatch = useDispatch();
   const sample = useSelector((state) => {
@@ -26,6 +29,7 @@ export const Header = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+    history(`/searchResults/${sample}`);
   };
 
   const handleChange = (e) => {
@@ -38,72 +42,59 @@ export const Header = () => {
   const handleMouseOut = () => {
     setIsHovering(false);
   };
-
   return (
-    <AppBar position="fixed">
+    <AppBar position="sticky" color="default" sx={{ bgcolor: "#FFD646" }}>
       <Toolbar>
         <IconButton size="large" edge="start" color="inherit" aria-label="logo">
           <CasinoIcon />
         </IconButton>
         <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-          Border Games Shop
+          <NavLink to="/">Border Games Shop</NavLink>
         </Typography>
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" alignItems="center" spacing={3} sx={{ m: 1 }}>
           <TextField
-            color="inherit"
+            component="form"
+            size="large"
+            onSubmit={onSubmit}
+            fullWidth
+            sx={{
+              "& .MuiTextField-root": { m: 1, width: "25ch" },
+            }}
+            value={sample}
+            onChange={handleChange}
             id="search"
-            label="Search"
-            variant="outlined"
-          />
-          <Button color="inherit"> about</Button>
-          <Button color="inherit"> login</Button>
-          <Button color="inherit"> login</Button>
+            name="search"
+            label="Search..."
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <NavLink to={`/searchResults/${sample}`} type="submit">
+                    <IconButton edge="end" color="primary" onClick={onSubmit}>
+                      <SearchIcon />
+                    </IconButton>
+                  </NavLink>
+                </InputAdornment>
+              ),
+            }}
+          ></TextField>
+          <IconButton color="inherit" size="large" style={{ fontSize: "18px" }}>
+            <NavLink
+              style={{ color: "black" }}
+              to="/myCart"
+              onMouseOver={handleMouseOver}
+              onMouseOut={handleMouseOut}
+            >
+              <Badge badgeContent={cart.length} color="secondary">
+                <ShoppingCartIcon size="large" />
+                {isHovering && <CartHeaderIcon />}
+              </Badge>
+            </NavLink>
+          </IconButton>
+          <Button color="inherit" size="large" style={{ fontSize: "18px" }}>
+            login
+          </Button>
         </Stack>
       </Toolbar>
     </AppBar>
   );
 };
-// <div className="ui secondary massive menu">
-//   <NavLink to="/" className="item header-logo">
-//     Game Board Shop
-//   </NavLink>
-//   <div className="right menu">
-//     <div className="right  item">
-//       <form className="ui icon big input" onSubmit={onSubmit}>
-//         <div className="ui icon input">
-//           <input
-//             type="text"
-//             placeholder="Search..."
-//             value={sample}
-//             onChange={handleChange}
-//             required
-//           />
-//           <NavLink to={`/searchResults/${sample}`}>
-//             <button
-//               className="ui red icon button"
-//               style={{ height: "100%" }}
-//             >
-//               <i className="search big  icon" />
-//             </button>
-//           </NavLink>
-//         </div>
-//       </form>
-//     </div>
-//     <NavLink
-//       className="item link"
-//       to="/myCart"
-//       onMouseOver={handleMouseOver}
-//       onMouseOut={handleMouseOut}
-//     >
-//       <i className="shop   icon"></i>
-//       <div className={cart.length ? "floating ui blue label" : ""}>
-//         {cart.length ? Number(cart.length) : ""}
-//       </div>
-//       {isHovering && <CartHeaderIcon />}
-//     </NavLink>
-
-//     <div className="ui item">
-//       <GoogleAuth />
-//     </div>
-//   </div>
-// </div>

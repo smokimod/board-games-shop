@@ -50,7 +50,7 @@ export const GameInfoDescription = ({
               </span>
               <span>
                 <i className="thumbtack icon"></i>
-                <a href={url} alt="-" target="_blank">
+                <a href={url} alt="-" target="_blank" rel="noreferrer">
                   Offical Page
                 </a>
               </span>

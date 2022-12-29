@@ -19,15 +19,15 @@ export const Footer = () => {
             <nav>
               <a href="#top">To the Top</a>
             </nav>
-            <a>To the News</a>
-            <a>About Shop</a>
-            <a>Events</a>
+            <a href="#top">To the News</a>
+            <a href="#top">About Shop</a>
+            <a href="#top">Events</a>
           </div>
           <div className="our-partners">
             <h2>Our Partnerts</h2>
-            <a>Tiny myths</a>
-            <a>Superior Ogre</a>
-            <a>Gaga Game Shop</a>
+            <a href="#top">Tiny myths</a>
+            <a href="#top">Superior Ogre</a>
+            <a href="#top">Gaga Game Shop</a>
           </div>
           <div className="footer-email">
             <h2>Contact Us</h2>

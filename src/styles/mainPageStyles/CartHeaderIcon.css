@@ -1,22 +1,21 @@
-.totalPriceBar-content{
-    position: absolute;
-    top:75px;
-    left: -200px;
-    background-color:aliceblue;
-    width: 400px;
-    padding: 10px 20px;
-    z-index:99;
-    border: solid 1px navy;
-
+.totalPriceBar-content {
+  position: absolute;
+  top: 75px;
+  right: -100px;
+  background-color: aliceblue;
+  width: 400px;
+  padding: 10px 20px;
+  z-index: 99;
+  border: solid 1px navy;
 }
-.cart-menu{
-    margin-top: 20px;
-    padding: 20px 0;
-    border-top: 1px solid ;
+.cart-menu {
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 1px solid;
 }
-.cart-menu-totalPrice{
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    font-weight: 800;
+.cart-menu-totalPrice {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: 800;
 }
