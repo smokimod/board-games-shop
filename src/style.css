@@ -10,9 +10,7 @@ main {
   display: flex;
   flex-direction: column;
 }
-.Outlet-container {
-  flex: 1 0 auto;
-}
+
 .medium.ui.button {
   margin: 15px;
 }

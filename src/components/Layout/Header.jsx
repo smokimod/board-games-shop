@@ -45,11 +45,26 @@ export const Header = () => {
   return (
     <AppBar position="sticky" color="default" sx={{ bgcolor: "#FFD646" }}>
       <Toolbar>
-        <IconButton size="large" edge="start" color="inherit" aria-label="logo">
-          <CasinoIcon />
-        </IconButton>
-        <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-          <NavLink to="/">Border Games Shop</NavLink>
+        <NavLink to="/" style={{ color: "black" }}>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="logo"
+          >
+            <CasinoIcon />
+          </IconButton>
+        </NavLink>
+
+        <Typography
+          variant="h5"
+          component="div"
+          sx={{ flexGrow: 1 }}
+          display={{ xs: "none", sm: "block" }}
+        >
+          <NavLink to="/" style={{ color: "black" }}>
+            Border Games Shop
+          </NavLink>
         </Typography>
         <Stack direction="row" alignItems="center" spacing={3} sx={{ m: 1 }}>
           <TextField
