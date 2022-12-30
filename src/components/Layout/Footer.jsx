@@ -1,7 +1,10 @@
 import { Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
+import { IconButton } from "@mui/material";
 import Link from "@mui/material/Link";
-
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import GoogleIcon from "@mui/icons-material/Google";
 import React from "react";
 // import "../../styles/mainPageStyles/Footer.css";
 
@@ -9,13 +12,23 @@ export const Footer = () => {
   return (
     <footer>
       <Box
-        px={{ xs: 3, sm: 2 }}
-        py={{ xs: 5, sm: 2 }}
+        px={{ xs: 3, sm: 3 }}
+        py={{ xs: 5, sm: 5 }}
         sx={{ bgcolor: "#FFD646" }}
       >
-        <Container maxWidth="lg">
-          <Grid container spacing={5}>
-            <Grid item xs={12} sm={4}>
+        <Container maxWidth="xl">
+          <Grid container spacing={5} pb={2}>
+            <Grid
+              item
+              xs={12}
+              lg={3}
+              sm={3}
+              sx={{
+                textTransform: "capitalize",
+                fontWeight: "bold",
+                fontSize: 16,
+              }}
+            >
               <Box borderBottom={1} component="h3">
                 Contacts
               </Box>
@@ -29,83 +42,133 @@ export const Footer = () => {
                 <span>Phone Number: 48-17-23</span>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              lg={3}
+              sm={3}
+              sx={{
+                textTransform: "capitalize",
+                fontWeight: "bold",
+                fontSize: 16,
+              }}
+            >
+              <Box borderBottom={1} component="h3">
+                Help
+              </Box>
+              <Box>
+                <span>FAQ</span>
+              </Box>
+              <Box>
+                <span>Service</span>
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={3}
+              sm={3}
+              sx={{
+                textTransform: "capitalize",
+                fontWeight: "bold",
+                fontSize: 16,
+              }}
+            >
               <Box borderBottom={1} component="h3">
                 Menu
               </Box>
               <Box>
-                <span>Tiny myths</span>
+                <Link href="/" underline="hover" color="inherit">
+                  About Shop
+                </Link>
               </Box>
               <Box>
-                <span>About Shop</span>
-              </Box>
-              <Box>
-                <span>Events</span>
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={4}>
-              <Box borderBottom={1} component="h3">
-                Partnerts
-              </Box>
-              <Box>
-                <Link href="/" underline="hover">
+                <Link href="/" underline="hover" color="inherit">
                   History
                 </Link>
               </Box>
               <Box>
-                <Link href="/" underline="hover">
+                <Link href="/" underline="hover" color="inherit">
+                  Events
+                </Link>
+              </Box>
+              <Box>
+                <Link href="/" underline="hover" color="inherit">
+                  Map
+                </Link>
+              </Box>
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              lg={3}
+              sm={3}
+              sx={{
+                textTransform: "capitalize",
+                fontWeight: "bold",
+                fontSize: 16,
+              }}
+            >
+              <Box borderBottom={1} component="h3">
+                Partners
+              </Box>
+              <Box>
+                <Link href="/" underline="hover" color="inherit">
+                  Lavka Games
+                </Link>
+              </Box>
+              <Box>
+                <Link href="/" underline="hover" color="inherit">
                   Roll and Dice
                 </Link>
               </Box>
               <Box>
-                <Link href="/" underline="hover">
+                <Link href="/" underline="hover" color="inherit">
                   Gaga Games Shop
                 </Link>
               </Box>
             </Grid>
           </Grid>
-          <Box textAlign="center" pt={{ xs: 5, sm: 10 }} pb={{ xs: 5, sm: 0 }}>
-            Board Games WorkShop &reg; {new Date().getFullYear()}
+          <Box
+            textAlign="center"
+            sx={{ fontWeight: "bold" }}
+            pt={{ xs: 5, sm: 9 }}
+            pb={{ xs: 5, sm: 0 }}
+          >
+            <Grid
+              container
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Grid item sm={0.3} px={{ sm: 2 }}>
+                <IconButton>
+                  <FacebookIcon color="primary" />
+                </IconButton>
+              </Grid>
+              <Grid item sm={0.3} px={{ sm: 2 }}>
+                <IconButton>
+                  <TwitterIcon color="primary" />
+                </IconButton>
+              </Grid>
+              <Grid item sm={0.3} px={{ sm: 2 }}>
+                <IconButton>
+                  <GoogleIcon color="primary" />
+                </IconButton>
+              </Grid>
+            </Grid>
+            @Board Games WorkShop. All rights reserved &reg;{" "}
+            {new Date().getFullYear()}
           </Box>
         </Container>
       </Box>
     </footer>
   );
 };
+
 {
-  /* <div className="footer-container">
-        <div className="footer-content">
-          <div className="contact">
-            <h2>Contact</h2>
-            <span>Street: Shmidta 23-38</span>
-            <span>Belarus Mogilev</span>
-            <span>Index: 212027</span>
-            <span>Phone Number: 48-17-23</span>
-            <span>Mobile Number: +375(33)929-29-53</span>
-          </div>
-          <div className="footer-menu">
-            <h2>Menu</h2>
-            <nav>
-              <a href="#top">To the Top</a>
-            </nav>
-            <a href="#top">To the News</a>
-            <a href="#top">About Shop</a>
-            <a href="#top">Events</a>
-          </div>
-          <div className="our-partners">
-            <h2>Our Partnerts</h2>
-            <a href="#top">Tiny myths</a>
-            <a href="#top">Superior Ogre</a>
-            <a href="#top">Gaga Game Shop</a>
-          </div>
-          <div className="footer-email">
-            <h2>Contact Us</h2>
-            <div className="ui action input">
+  /* <div className="ui action input">
               <input type="text" placeholder="e-mail" />
               <button className="ui button">Sign In</button>
-            </div>
-          </div>
-        </div>
-        <div className="footer-origin">Created 30.11.2021</div>
-      </div> */
+            </div> */
 }
