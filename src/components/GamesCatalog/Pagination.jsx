@@ -29,6 +29,7 @@ export const PaginationBar = () => {
     } else {
       dispatch(cartHolder(item));
     }
+    localStorage.setItem("cartItem", JSON.stringify(item));
   };
 
   useEffect(() => {

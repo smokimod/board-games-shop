@@ -4,7 +4,7 @@ import { cartClear } from "../../../Redux/reducers/cartReducers";
 import "../../../styles/mainPageStyles/CartHeaderIcon.css";
 import { CartIconGames } from "./CartIconGames/CartIconGames";
 
-export const CartHeaderIcon = () => {
+export const CartHeaderIcon = ({ handleMouseOver }) => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.itemsCart);
   const totalPrice = cart.reduce(
