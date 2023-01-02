@@ -132,7 +132,7 @@ export const Footer = () => {
           <Box
             textAlign="center"
             sx={{ fontWeight: "bold" }}
-            pt={{ xs: 5, sm: 9 }}
+            pt={{ xs: 10, sm: 9 }}
             pb={{ xs: 5, sm: 0 }}
           >
             <Grid

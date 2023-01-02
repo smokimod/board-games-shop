@@ -17,7 +17,7 @@ export const getBoardGamesData = () => async (dispatch) => {
   dispatch(getPopularGames(responsesPopularGames));
 
   const responsesSpecialGames = await axios.get(
-    `https://api.boardgameatlas.com/api/search?gt_min_players=2&limit=5&client_id=VqVYih77GT`
+    `https://api.boardgameatlas.com/api/search?gt_min_players=2&limit=25&client_id=VqVYih77GT`
   );
   dispatch(getSpecialGames(responsesSpecialGames));
 };
