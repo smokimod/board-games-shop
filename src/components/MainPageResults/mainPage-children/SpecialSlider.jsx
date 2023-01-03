@@ -8,8 +8,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
-import { margin } from "@mui/system";
+import { CardActionArea } from "@mui/material";
 
 export const SimpleSlider = () => {
   const games = useSelector((state) => state.specials.games);
@@ -31,6 +30,16 @@ export const SimpleSlider = () => {
           infinite: true,
           adaptiveHeight: true,
 
+          dots: false,
+        },
+      },
+      {
+        breakpoint: 750,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          adaptiveHeight: true,
           dots: false,
         },
       },
@@ -92,18 +101,3 @@ export const SimpleSlider = () => {
   );
 };
 export default SimpleSlider;
-{
-  /* <NavLink
-to={`/currentGame/${slide.id}`}
-className="slider-info"
->
-<h1 className="slide-title">{slide.name}</h1>
-<p className="para">
-  {slide.description_preview
-    .split(" ")
-    .slice(0, 124)
-    .join(" ")}
-  ...
-</p>
-</NavLink> */
-}

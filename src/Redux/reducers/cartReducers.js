@@ -5,13 +5,13 @@ const REMOVE_QUANTITY = "REMOVE_QUANTITY";
 const CLEAR_CART = "CLEAR_CART";
 
 const initialState = {
-  itemsCart: [],
+  itemsCart: localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [],
 };
 
 export const cartReducer = (state = initialState, action) => {
   const { payload } = action;
-  const item = state.itemsCart.find((item) => item.id === payload.id);
-
   switch (action.type) {
     case ADD_CART:
       return {
@@ -29,7 +29,9 @@ export const cartReducer = (state = initialState, action) => {
       };
 
     case ADD_QUANTITY:
-      if (item) {
+      const itemForAdd = state.itemsCart.find((item) => item.id === payload.id);
+
+      if (itemForAdd) {
         return {
           ...state,
           itemsCart: state.itemsCart.map((item) =>
@@ -48,7 +50,11 @@ export const cartReducer = (state = initialState, action) => {
       };
 
     case REMOVE_QUANTITY:
-      if (item) {
+      const itemForRemove = state.itemsCart.find(
+        (item) => item.id === payload.id
+      );
+
+      if (itemForRemove) {
         return {
           ...state,
           itemsCart: state.itemsCart.map((item) =>

@@ -10,18 +10,17 @@ import { SearchedGames } from "./SearchedGames.jsx/SearchedGames";
 const clientId = "client_id=VqVYih77GT";
 
 export const PaginationBar = () => {
+  const sample = useSelector((state) => state.sample.value);
+  const cart = useSelector((state) => state.cart.itemsCart);
   const location = useLocation();
   const dispatch = useDispatch();
-  const { nam } = useParams();
-  const [games, setGames] = useState([]);
+  const { title } = useParams();
+  const [games, setGames] = useState();
   const [skip, setSkip] = useState(0);
   const [pageQty, setPageQty] = useState(0);
   const [page, setPage] = useState(
     parseInt(location.search?.split("=")[1] || 1)
   );
-  const sample = useSelector((state) => state.sample.value);
-  const cart = useSelector((state) => state.cart.itemsCart);
-
   const addToCart = (item) => {
     const isItemInCart = cart.some((game) => game.id === item.id);
     if (isItemInCart) {
@@ -29,15 +28,17 @@ export const PaginationBar = () => {
     } else {
       dispatch(cartHolder(item));
     }
-    localStorage.setItem("cartItem", JSON.stringify(item));
   };
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   useEffect(() => {
     const getRequest = () => {
       axios
         .get(
           `https://api.boardgameatlas.com/api/search?name=${
-            sample || nam ? nam : ""
+            sample || title ? title : ""
           }&skip=${skip}&limit=15&exact=false&${clientId}`
         )
         .then(({ data }) => {
@@ -52,7 +53,7 @@ export const PaginationBar = () => {
         .catch((error) => console.log(error.message));
     };
     getRequest();
-  }, [page, skip, pageQty, sample, nam]);
+  }, [page, skip, pageQty, sample, title]);
 
   return (
     <>
@@ -99,7 +100,7 @@ export const PaginationBar = () => {
               <PaginationItem
                 component={NavLink}
                 to={`/searchResults${
-                  nam || sample ? `/${nam}` || `/${sample}` : ""
+                  title || sample ? `/${title}` || `/${sample}` : ""
                 }${item.page === 1 ? "" : `/?page=${item.page}`}`}
                 {...item}
               />

@@ -13,6 +13,7 @@ export const CartHeaderIcon = ({ handleMouseOver }) => {
   );
   const clearCart = () => {
     dispatch(cartClear([]));
+    localStorage.clear("cart");
   };
 
   return (
@@ -39,9 +40,9 @@ export const CartHeaderIcon = ({ handleMouseOver }) => {
                   <span style={{ color: "green" }}>
                     ${totalPrice.toFixed(2)}
                   </span>
-                  <button onClick={clearCart} className="ui primary button">
+                  <div onClick={clearCart} className="ui primary button">
                     Clear cart
-                  </button>
+                  </div>
                 </div>
               </div>
             ) : null}

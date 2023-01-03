@@ -13,11 +13,11 @@ export const Footer = () => {
     <footer>
       <Box
         px={{ xs: 3, sm: 3 }}
-        py={{ xs: 5, sm: 5 }}
+        py={{ xs: 3, sm: 5 }}
         sx={{ bgcolor: "#FFD646" }}
       >
         <Container maxWidth="xl">
-          <Grid container spacing={5} pb={2}>
+          <Grid container spacing={{ xs: 3, sm: 5 }} pb={2}>
             <Grid
               item
               xs={12}
@@ -165,10 +165,3 @@ export const Footer = () => {
     </footer>
   );
 };
-
-{
-  /* <div className="ui action input">
-              <input type="text" placeholder="e-mail" />
-              <button className="ui button">Sign In</button>
-            </div> */
-}

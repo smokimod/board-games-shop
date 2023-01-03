@@ -13,7 +13,7 @@ const App = () => {
         <Route index element={<HomePage />}></Route>
         <Route path="currentGame/:ids" element={<GameInfo />} />
         <Route path="searchResults/" element={<SearchResults />}>
-          <Route path=":nam" element={<SearchResults />}></Route>
+          <Route path=":title" element={<SearchResults />}></Route>
         </Route>
         <Route path="gameInfo" element={<GameInfo />}></Route>
         <Route path="myCart" element={<MyCart />}></Route>

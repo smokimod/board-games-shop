@@ -21,6 +21,7 @@ export const ModalCartItems = ({ modal, setModal }) => {
   const onSubmit = (data) => {
     if (data.name && data.address && data.number && data.email) {
       dispatch(cartClear([]));
+      localStorage.clear("cart");
       setModal();
     } else {
       return null;

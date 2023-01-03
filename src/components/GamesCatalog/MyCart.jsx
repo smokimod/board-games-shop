@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/MyCart.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -26,10 +26,15 @@ export const MyCart = () => {
     dispatch(cartDeleter(item));
   };
 
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   const totalPrice = cart.reduce(
     (a, b) => a + Number(b.price) * Number(b.quantity),
     0
   );
+
   return (
     <>
       <div className="cart-block">

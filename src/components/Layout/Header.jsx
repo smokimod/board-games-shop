@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../styles/mainPageStyles/Header.css";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -96,22 +96,23 @@ export const Header = ({ handleMouseOver, isHovering }) => {
                 ),
               }}
             ></TextField>
-            <IconButton
-              color="inherit"
-              size="large"
-              style={{ fontSize: "18px" }}
+            <NavLink
+              style={{ color: "black" }}
+              to="/myCart"
+              onMouseOver={handleMouseOver}
             >
-              <NavLink
-                style={{ color: "black" }}
-                to="/myCart"
-                onMouseOver={handleMouseOver}
+              <IconButton
+                color="inherit"
+                size="large"
+                style={{ fontSize: "18px" }}
               >
                 <Badge badgeContent={cart.length} color="secondary">
                   <ShoppingCartIcon size="large" />
                 </Badge>
-              </NavLink>
-              {isHovering && <CartHeaderIcon />}
-            </IconButton>
+                {isHovering && <CartHeaderIcon />}
+              </IconButton>
+            </NavLink>
+
             <Button color="inherit" size="large" style={{ fontSize: "18px" }}>
               login
             </Button>
