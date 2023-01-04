@@ -35,7 +35,7 @@ export const HomePage = () => {
           <SpecialDeals />
           <PopularGames />
           <AdditionPopularGames />
-          <ActualRealises />
+          {/* <ActualRealises /> */}
         </>
       )}
     </>

@@ -3,6 +3,7 @@
   border: solid 3px red;
   border-right: none;
   border-left: none;
+  overflow: hidden;
 }
 .specialDeals-logo {
   display: flex;
