@@ -52,7 +52,7 @@ export const PopularGamesChildren = () => {
         <h2>Search Game You Would like!</h2>
         <NavLink
           to={`/searchResults/${sample}`}
-          className="ui fluid circular big yellow link button"
+          className="ui circular big yellow link button"
         >
           Search Among Popular Games!
         </NavLink>

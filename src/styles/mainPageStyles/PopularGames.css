@@ -4,10 +4,11 @@
 
 .realises_container {
   min-height: 480px;
+  max-width: 1800px;
   padding: 10px 15px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   height: 100%;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -19,11 +20,10 @@
 }
 .rel_container_item {
   flex-grow: 2;
-
   width: 400px;
   height: 210px;
   margin: 10px;
-  border-radius: 15px;
+  border-radius: 10px;
   background: rgb(238, 174, 202);
   background: radial-gradient(
     circle,
@@ -38,13 +38,19 @@
 }
 
 .rel_container_bigItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 500px;
-  height: 440px;
+  height: 450px;
   border-radius: 20px;
-  background: url("https://i0.wp.com/www.boardgameanalysis.com/wp-content/uploads/2017/04/Catan-CloseupGameplay-2149-Edit.jpg?fit=1200%2C798&ssl=1&w=640");
+  background: url("../images//popularGames.webp");
   background-size: cover;
   box-shadow: inset 0px 150px 70px 10px rgba(1, 1, 1, 0.6);
   color: white;
+}
+.rel_container_bigItem a {
+  color: black !important;
 }
 .rel_container_bigItem h2 {
   padding: 20px;
@@ -80,11 +86,37 @@
 .rel_href {
   text-decoration: none;
 }
+@media (max-width: 1160px) {
+  .new_realises_block {
+    margin: 20px 30px 0px 30px;
+  }
+  .realises_container {
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+  }
+  .realises_column {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-grow: 2;
+  }
+  .rel_container_item {
+    flex-grow: 2;
+    flex-basis: 350px;
+    height: 210px;
+    margin: 10px;
+  }
+  .rel_container_bigItem {
+    width: 98%;
+    height: 210px;
+    margin: 10px;
+  }
+}
 @media (max-width: 1024px) {
   .new_realises_block {
-    margin: 20px 60px 0px 60px;
+    margin: 20px 30px 0px 30px;
   }
-
   .realises_container {
     min-height: 480px;
     display: flex;
@@ -93,7 +125,6 @@
   .realises_column {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     width: 100%;
     flex-grow: 2;
   }
@@ -101,79 +132,46 @@
     flex-grow: 2;
     flex-basis: 350px;
     height: 210px;
-    margin: 15px;
-    border-radius: 15px;
-    background: rgb(238, 174, 202);
-    background: radial-gradient(
-      circle,
-      rgba(238, 174, 202, 1) 0%,
-      rgba(148, 187, 233, 1) 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 320px;
-    background-position: center;
-    box-shadow: inset 0px -10px 70px 5px rgba(1, 1, 1, 0.6),
-      inset 0px 10px 70px 5px rgba(1, 1, 1, 0.6);
+    margin: 10px;
   }
   .rel_container_bigItem {
-    flex-grow: 2;
-    flex-basis: 400px;
+    width: 98%;
     height: 250px;
-    margin: 0px 10px;
-    border-radius: 20px;
-    background: url("https://i0.wp.com/www.boardgameanalysis.com/wp-content/uploads/2017/04/Catan-CloseupGameplay-2149-Edit.jpg?fit=1200%2C798&ssl=1&w=640");
-    background-size: cover;
-    box-shadow: inset 0px 150px 70px 10px rgba(1, 1, 1, 0.6);
-    color: white;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rel_container_bigItem a {
+    font-size: 1.3rem !important;
+    color: black !important;
   }
 }
 
-@media (max-width: 880px) {
+@media (max-width: 880px) and (max-width: 1023px) {
   .new_realises_block {
     margin: 20px 30px 0px 30px;
   }
-  .realises_container {
-    min-height: 480px;
-    display: flex;
-    flex-wrap: wrap;
-  }
+
   .rel_container_item {
     width: 300px;
     height: 210px;
-    margin: 15px;
-    border-radius: 15px;
-    background: rgb(238, 174, 202);
-    background: radial-gradient(
-      circle,
-      rgba(238, 174, 202, 1) 0%,
-      rgba(148, 187, 233, 1) 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 320px;
-    background-position: center;
-    box-shadow: inset 0px -10px 70px 5px rgba(1, 1, 1, 0.6),
-      inset 0px 10px 70px 5px rgba(1, 1, 1, 0.6);
+    margin: 10px;
   }
   .rel_container_bigItem {
-    width: 300px;
+    width: 98%;
     height: 250px;
-    margin: 0px 10px;
-    border-radius: 20px;
-    background: url("https://i0.wp.com/www.boardgameanalysis.com/wp-content/uploads/2017/04/Catan-CloseupGameplay-2149-Edit.jpg?fit=1200%2C798&ssl=1&w=640");
-    background-size: cover;
-    box-shadow: inset 0px 150px 70px 10px rgba(1, 1, 1, 0.6);
-    color: white;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rel_container_bigItem a {
+    font-size: 1.2rem !important;
+    color: black !important;
   }
 }
 @media (max-width: 600px) {
-  .new_realises_block {
-    margin: 20px 30px 0px 30px;
-  }
-  .realises_container {
-    min-height: 480px;
-    display: flex;
-    flex-wrap: wrap;
-  }
   .realises_column {
     display: flex;
     flex-direction: column;
@@ -186,25 +184,23 @@
     flex-grow: 2;
     flex-basis: 200px;
     height: 210px;
-    margin: 15px;
-    border-radius: 15px;
-    background: rgb(238, 174, 202);
-    background: radial-gradient(
-      circle,
-      rgba(238, 174, 202, 1) 0%,
-      rgba(148, 187, 233, 1) 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 320px;
-    background-position: center;
-    box-shadow: inset 0px -10px 70px 5px rgba(1, 1, 1, 0.6),
-      inset 0px 10px 70px 5px rgba(1, 1, 1, 0.6);
+    margin: 10px;
   }
-
+  .rel_container_bigItem {
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .rel_container_bigItem h2 {
-    padding: 20px;
     font-size: 1.3rem;
-    font-family: sans-serif;
-    font-weight: 400;
+    text-align: center;
+    font-weight: 800;
+  }
+  .rel_container_bigItem a {
+    font-size: 1.2rem !important;
+    width: 180px;
+    padding: 0.5rem !important;
+    color: black !important;
   }
 }

@@ -13,11 +13,11 @@ export const Footer = () => {
     <footer>
       <Box
         px={{ xs: 3, sm: 3 }}
-        py={{ xs: 3, sm: 5 }}
+        py={{ xs: 2, sm: 5 }}
         sx={{ bgcolor: "#FFD646" }}
       >
         <Container maxWidth="xl">
-          <Grid container spacing={{ xs: 3, sm: 5 }} pb={2}>
+          <Grid container spacing={{ xs: 1, sm: 5 }} pb={2}>
             <Grid
               item
               xs={12}
@@ -132,8 +132,8 @@ export const Footer = () => {
           <Box
             textAlign="center"
             sx={{ fontWeight: "bold" }}
-            pt={{ xs: 10, sm: 9 }}
-            pb={{ xs: 5, sm: 0 }}
+            pt={{ xs: 8, sm: 9 }}
+            pb={{ xs: 2, sm: 0 }}
           >
             <Grid
               container
