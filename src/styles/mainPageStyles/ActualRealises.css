@@ -10,30 +10,37 @@
 
 .actual-realises-info {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
-
+.actual-heading {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  font-size: 24px;
+  padding: 0px 15px;
+  font-weight: 800;
+  color: rgb(87, 10, 10);
+}
 .actual-realises-content {
-  background-color: antiquewhite;
   border-radius: 20px;
   display: flex;
-  justify-content: space-around;
+  width: 100%;
   align-items: center;
-  box-shadow: inset 40px 30px 70px 10px rgb(254, 216, 3),
-    inset -40px -30px 70px 10px rgb(254, 216, 3);
+  box-shadow: inset 20px 10px 130px 5px rgb(254, 241, 3),
+    inset -20px -10px 130px 5px rgb(254, 62, 3);
 }
 .actual-game {
-  padding: 30px 0;
+  padding: 30px;
   width: 20%;
   text-align: center;
 }
 .actual-game div {
-  min-height: 15em;
+  height: 300px;
   width: 100%;
 }
-.actual-game img {
-  width: 12em;
-  height: 15em;
+.actual-img {
+  max-width: 100%;
+  max-height: 100%;
 }
 .actual-game span {
   color: green;
@@ -45,22 +52,6 @@
   flex-direction: column;
   align-content: center;
   width: 30%;
-}
-.actual-realises-block.autumn {
-  background: url("../images/autumn-park-leaves-sun-1053614486.jpg"), no-repeat;
-  background-size: contain;
-}
-.actual-realises-block.winter {
-  background: url("../images/winter_time_with_a_lot_of_fun_1.jpg"), no-repeat;
-  background-size: contain;
-}
-.actual-realises-block.spring {
-  background: url("../images//spring-blossom.jpg"), no-repeat;
-  background-size: contain;
-}
-.actual-realises-block.summer {
-  background: url("../images//5356755_062119-cc-ss-summer-sun-img.jpg");
-  background-size: contain;
 }
 
 .actual-date span {
@@ -74,11 +65,19 @@
   height: 50px;
   padding: 20px 20px;
 }
-.actual-heading {
-  font-size: 24px;
-  padding: 0px 15px;
-  font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Lucida,
-    Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  color: white;
+
+.actual-realises-block.autumn {
+  background-position: center;
+  background: url("../images/autumn-park-leaves-sun-1053614486.jpg"), no-repeat;
+}
+.actual-realises-block.winter {
+  background: url("../images/winter_time_with_a_lot_of_fun_1.jpg"), no-repeat;
+}
+.actual-realises-block.spring {
+  background: url("../images//spring-blossom.jpg"), no-repeat;
+}
+.actual-realises-block.summer {
+  background: url("../images//5356755_062119-cc-ss-summer-sun-img.jpg"),
+    no-repeat;
+  background-size: cover;
 }
