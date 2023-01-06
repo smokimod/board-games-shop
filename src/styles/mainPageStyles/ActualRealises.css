@@ -4,8 +4,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .actual-realises-container {
-  padding: 10px 15px;
-  min-height: 100%;
+  padding: 15px;
 }
 
 .actual-realises-info {
@@ -15,9 +14,8 @@
 .actual-heading {
   display: flex;
   justify-content: center;
-  width: 30%;
   font-size: 24px;
-  padding: 0px 15px;
+  margin-bottom: 20px;
   font-weight: 800;
   color: rgb(87, 10, 10);
 }
@@ -80,4 +78,129 @@
   background: url("../images//5356755_062119-cc-ss-summer-sun-img.jpg"),
     no-repeat;
   background-size: cover;
+}
+
+.card {
+  display: inline-block;
+  width: 215px;
+  border-radius: 10px;
+  padding: 16px;
+  overflow: hidden;
+  background: linear-gradient(130deg, #f6a610 0%, rgb(255, 255, 255) 100%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: all 0.4s;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.cover {
+  position: relative;
+  margin-bottom: 18px;
+}
+.cover img {
+  display: block;
+  width: 100%;
+  max-height: 200px;
+  border-radius: 4px;
+}
+.card:hover {
+  bottom: 6px;
+  opacity: 1;
+}
+
+.card-content {
+  font-family: "Montserrat", sans-serif;
+  color: #04020e;
+  padding-bottom: 15px;
+}
+.card-content h4 {
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-bottom: 6px;
+}
+.card-content p {
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  height: 2.5em;
+  font-size: 1rem;
+  margin-top: 6px;
+  color: rgb(41, 47, 41);
+}
+
+.card-button {
+  cursor: pointer;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(130deg, #ff5443 0%, #ff8f4e 100%);
+  border: 0px;
+  border-radius: 25px;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+@media (max-width: 1600px) {
+  .card {
+    display: inline-block;
+    width: 200px;
+  }
+}
+
+@media (max-width: 1480px) {
+  .actual-realises-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .actual-realises-container {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .actual-realises-block {
+    margin: 40px 0px;
+    box-shadow: inset 40px 10px 230px 5px rgb(255, 234, 0),
+      inset -40px -10px 230px 5px rgb(253, 122, 0);
+    margin-bottom: 0;
+  }
+  .actual-realises-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .actual-heading {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+  }
+  .actual-heading h2 {
+    color: rgb(0, 0, 0);
+    font-size: 1.6rem;
+  }
+  .card {
+    display: inline-block;
+    width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .card span {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  .card-content {
+    padding-bottom: 10px;
+  }
+  .card-content p {
+    margin-top: 3px;
+  }
+  .card-content h4 {
+    font-size: 1.3rem;
+  }
+  .card-button {
+    padding: 10px;
+  }
 }

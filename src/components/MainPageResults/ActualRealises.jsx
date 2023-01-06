@@ -2,7 +2,8 @@ import React from "react";
 import "../../styles/mainPageStyles/ActualRealises.css";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { SolidGameCardDemo } from "./mainPage-children/ActualGamesList";
+import { ActualItem } from "./mainPage-children/ActualGamesList";
+import { Container, Grid } from "@mui/material";
 
 export const ActualRealises = () => {
   const current = new Date();
@@ -27,14 +28,15 @@ export const ActualRealises = () => {
 
   const actualGames =
     games && games.length > 0
-      ? games.slice(7, 12).map((item) => {
+      ? games.slice(7, 17).map((item) => {
           return (
             <React.Fragment key={item.id}>
-              <SolidGameCardDemo
+              <ActualItem
                 id={item.id}
                 name={item.name}
                 image={item.image_url}
                 price={item.price}
+                description={item.description_preview}
               />
             </React.Fragment>
           );
@@ -45,10 +47,26 @@ export const ActualRealises = () => {
     <div className={`actual-realises-block ${getMonth()}`}>
       <div className="actual-realises-container">
         <div className="actual-realises-info">
-          <h2 className="actual-heading">
-            <time>New: {date}</time>
-          </h2>
-          <div className="actual-realises-content">{actualGames}</div>
+          <div className="actual-heading">
+            <h2>
+              <time>New: {date}</time>
+            </h2>
+          </div>
+          {/* <div className="actual-realises-content"> */}
+          <Container p={{ xs: 1, sm: 3 }}>
+            <Grid
+              columns={{ md: -5, lg: 0, xl: 0 }}
+              container
+              spacing={{ xs: 2.5, sm: 3, md: 2 }}
+              textAlign="center"
+              justifyContent="center"
+
+              // justifyContent="space-evenly"
+            >
+              {actualGames}
+            </Grid>
+          </Container>
+          {/* </div> */}
         </div>
       </div>
     </div>
