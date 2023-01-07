@@ -22,7 +22,9 @@ export const SearchResults = () => {
     <div className="search-block">
       <div className="search-container">
         <div className="search-categories">
-          <h2>Search By </h2>
+          <div className="search-categories-head">
+            <h2>Search By </h2>
+          </div>
           {arr}
         </div>
         <div className="search-results">

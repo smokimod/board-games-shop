@@ -8,6 +8,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useNavigate } from "react-router-dom";
 import { CartHeaderIcon } from "../MainPageResults/mainPage-children/CartHeaderIcon";
 import {
+  Box,
   AppBar,
   IconButton,
   Toolbar,
@@ -109,9 +110,11 @@ export const Header = ({ handleMouseOver, isHovering }) => {
                 <Badge badgeContent={cart.length} color="secondary">
                   <ShoppingCartIcon size="large" />
                 </Badge>
-                {isHovering && <CartHeaderIcon />}
               </IconButton>
             </NavLink>
+            <Box display={{ xs: "none", sm: "block" }}>
+              {isHovering && <CartHeaderIcon />}
+            </Box>
 
             <Button color="inherit" size="large" style={{ fontSize: "18px" }}>
               login

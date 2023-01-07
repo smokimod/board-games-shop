@@ -57,7 +57,7 @@ export const PaginationBar = () => {
 
   return (
     <>
-      <div className="ui five doubling stackable cards">
+      <div className="ui five doubling cards">
         {games && games.length > 0
           ? games.map((item) => {
               return (

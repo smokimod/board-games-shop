@@ -28,3 +28,49 @@
   text-align: start;
   font-weight: 800;
 }
+@media (max-width: 770px) {
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .search-categories {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    width: 100%;
+    min-height: 100%;
+    border-bottom: solid 1px black;
+  }
+  .search-categories-head {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: solid 1px black;
+  }
+  .search-categories h2 {
+    padding: 0 20px;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    margin: 0;
+  }
+  .ui.huge.link.list {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .search-results {
+    height: 100%;
+    margin: 20px;
+  }
+  .results-info {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 25px;
+    text-align: start;
+    font-weight: 800;
+  }
+  .ui.cards {
+  }
+}
