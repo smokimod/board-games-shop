@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../../../styles/SearhResulets.css";
 
 export const SearchedGames = ({
   id,
@@ -11,7 +12,7 @@ export const SearchedGames = ({
   isItemInCart,
 }) => {
   return (
-    <div className="ui yellow big card">
+    <div className="ui yellow fluid card">
       <div className="image">
         <NavLink
           href="#top"

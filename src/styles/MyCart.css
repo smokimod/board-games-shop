@@ -42,3 +42,7 @@
 .ui.segment {
   position: unset;
 }
+
+.ui.center.aligned.segment {
+  margin: 10px 0;
+}

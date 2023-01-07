@@ -12,7 +12,7 @@ export const SearchResults = () => {
       <div className="ui huge link list" key={i}>
         <div className="active item">Home</div>
         <NavLink className="item">About</NavLink>
-        <NavLink className="item">Работы</NavLink>
+        <NavLink className="item">Works</NavLink>
         <NavLink className="item">Team</NavLink>
       </div>
     );

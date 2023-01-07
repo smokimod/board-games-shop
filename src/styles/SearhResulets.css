@@ -40,7 +40,7 @@
     padding: 0 20px;
     width: 100%;
     min-height: 100%;
-    border-bottom: solid 1px black;
+    border-bottom: solid 3px rgb(255, 204, 0);
   }
   .search-categories-head {
     display: flex;
@@ -71,6 +71,23 @@
     text-align: start;
     font-weight: 800;
   }
-  .ui.cards {
+}
+@media (min-width: 375px) and (max-width: 540px) {
+  .search-block {
+    margin: 10px;
+  }
+  .search-container {
+    margin: 0px;
+  }
+
+  .button.ui {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  /* .button.ui i {
+    font-size: 0.5rem;
+  } */
+  .ui.card > .content > .header {
+    font-size: 1.1rem !important;
   }
 }

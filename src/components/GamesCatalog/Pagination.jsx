@@ -78,7 +78,7 @@ export const PaginationBar = () => {
             })
           : games}
       </div>
-      <div className="ui center aligned segment">
+      <div className="ui center  aligned segment">
         {!!pageQty && (
           <Pagination
             sx={{
@@ -94,7 +94,7 @@ export const PaginationBar = () => {
             onChange={(_, i) => setPage(i)}
             showFirstButton
             showLastButton
-            boundaryCount={3}
+            boundaryCount={2}
             siblingCount={1}
             renderItem={(item) => (
               <PaginationItem
