@@ -15,9 +15,12 @@ export const ActualRealises = () => {
     if (month === "September" || month === "October" || month === "November") {
       return "autumn";
     } else if (
+      month === "December" ||
       month === "декабрь" ||
       month === "Junuary" ||
-      month === "Febuary"
+      month === "январь" ||
+      month === "Febuary" ||
+      month === "февраль"
     ) {
       return "winter";
     } else if (month === "Marth" || month === "April" || month === "May") {
@@ -52,7 +55,6 @@ export const ActualRealises = () => {
               <time>New: {date}</time>
             </h2>
           </div>
-          {/* <div className="actual-realises-content"> */}
           <Container p={{ xs: 1, sm: 3 }}>
             <Grid
               columns={{ md: -5, lg: 0, xl: 0 }}
@@ -60,13 +62,10 @@ export const ActualRealises = () => {
               spacing={{ xs: 2.5, sm: 3, md: 2 }}
               textAlign="center"
               justifyContent="center"
-
-              // justifyContent="space-evenly"
             >
               {actualGames}
             </Grid>
           </Container>
-          {/* </div> */}
         </div>
       </div>
     </div>

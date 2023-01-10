@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../styles/SearhResulets.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { PaginationBar } from "./Pagination";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 export const SearchResults = () => {
   const sample = useSelector((state) => state.sample.value);
+  const [category, setCategory] = useState("");
 
+  const handleChange = (event) => {
+    setCategory(event.target.value);
+  };
   const arr = [1, 2, 3].map((i) => {
     return (
       <div className="ui huge link list" key={i}>
@@ -23,6 +32,24 @@ export const SearchResults = () => {
       <div className="search-container">
         <div className="search-categories">
           <div className="search-categories-head">
+            <Box sx={{ minWidth: 120 }}>
+              <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Sort</InputLabel>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  value={category}
+                  label="Sort"
+                  onChange={handleChange}
+                >
+                  <MenuItem value={"rating"}>By rating</MenuItem>
+                  <MenuItem value={"hightolow"}>Higth price</MenuItem>
+                  <MenuItem value={"lowtohigh"}>Low price</MenuItem>
+                  <MenuItem value={"hightime"}>Higth playtime</MenuItem>
+                  <MenuItem value={"lowtime"}>Low playtime</MenuItem>
+                </Select>
+              </FormControl>
+            </Box>
             <h2>Search By </h2>
           </div>
           {arr}
@@ -31,7 +58,7 @@ export const SearchResults = () => {
           <div className="results-info">
             <h2>Results of Search: {sample}</h2>
           </div>
-          <PaginationBar />
+          <PaginationBar category={category} />
         </div>
       </div>
     </div>

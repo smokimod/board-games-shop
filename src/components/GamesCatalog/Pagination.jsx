@@ -9,7 +9,7 @@ import { cartDeleter } from "../../Redux/reducers/cartReducers";
 import { SearchedGames } from "./SearchedGames.jsx/SearchedGames";
 const clientId = "client_id=VqVYih77GT";
 
-export const PaginationBar = () => {
+export const PaginationBar = ({ category }) => {
   const sample = useSelector((state) => state.sample.value);
   const cart = useSelector((state) => state.cart.itemsCart);
   const location = useLocation();
@@ -43,6 +43,32 @@ export const PaginationBar = () => {
         )
         .then(({ data }) => {
           setGames(data.games);
+          if (category === "lowtohigh") {
+            data.games.sort((a, b) => {
+              return a.price - b.price;
+            });
+          }
+          if (category === "hightolow") {
+            data.games.sort((a, b) => {
+              return b.price - a.price;
+            });
+          }
+          if (category === "rating") {
+            data.games.sort((a, b) => {
+              return a.rank - b.rank;
+            });
+          }
+          if (category === "hightime") {
+            data.games.sort((a, b) => {
+              return b.min_playtime - a.min_playtime;
+            });
+          }
+          if (category === "lowtime") {
+            data.games.sort((a, b) => {
+              return a.min_playtime - b.min_playtime;
+            });
+          }
+          console.log(data.games);
           setPageQty(Math.ceil(data.count / 15));
           setSkip(page * 15 - 15);
 
@@ -53,7 +79,7 @@ export const PaginationBar = () => {
         .catch((error) => console.log(error.message));
     };
     getRequest();
-  }, [page, skip, pageQty, sample, title]);
+  }, [page, skip, pageQty, sample, title, category]);
 
   return (
     <>
