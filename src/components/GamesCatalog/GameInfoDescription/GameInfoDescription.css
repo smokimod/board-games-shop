@@ -1,62 +1,73 @@
-.gameInfo-container {
-  display:flex;
-  justify-content: center;
+.game-info {
+  margin: 30px;
+  min-width: 1380px;
+  display: flex;
   flex-direction: column;
-  padding: 20px;
 }
-.game-description{
-  padding: 30px 50px;
-  margin: 10px;
+.game-description {
+  text-align: justify;
+  padding: 30px 0;
+  margin: 20px 0;
   font-weight: 400;
   font-size: 1.5rem;
   letter-spacing: 0.5px;
 }
-.game-info {
-    padding: 50px;
-    margin: 10px;
-  height: 500px;
-  min-width: 1380px;
-  }
-  .game-info-head{
-    display: flex;
-    width: 100%;
-  }
-  .game-img-container{
-    width: 30%;
-    height: 400px;
-  }
-  .game-img{
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .game-char{
-    width: 50%;
+.game-info-head {
+  display: flex;
+  width: 100%;
+}
+.game-img-container {
+  margin-right: 20px;
+}
+.info-item {
+  padding-right: 0 5px;
+}
+.game-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.game-char {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ui.dividing.header {
+  font-size: 3rem !important;
+}
+.additional-info {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+.additional-info > span {
+  color: black;
+  font-size: 1.7rem;
+}
+.stock {
+  color: orange;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.price {
+  color: green;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+@media (max-width: 1480px) {
+  .game-info {
+    margin: 30px;
+    max-width: 1480px;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
   }
- .ui.dividing.header{
-    padding-bottom: 5px !important;
-    font-size: 3rem !important;
- }
-  .additional-info{
-    display: flex;
-    justify-content: space-between;
+
+  .game-description {
+    text-align: justify;
+    padding: 30px 0;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
   }
-  .additional-info >span{
-   color: black;
-   font-size: 1.7rem;
-  }
-  .stock{
-    color:orange;
-    font-weight: 800;
-    font-size: 1.5rem;
-    padding: 20px 0;
-    margin: 10px 0;
-  }
-  .price{
-    padding: 10px 0;
-    color: green;
-    font-weight: 800;
-    font-size: 1.5rem;
-  }
+}

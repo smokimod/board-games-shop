@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cartHolder, cartDeleter } from "../../Redux/reducers/cartReducers";
 import { GameInfoDescription } from "./GameInfoDescription/GameInfoDescription";
+import { Container } from "@mui/system";
 
 export const GameInfo = () => {
   const dispatch = useDispatch();
@@ -31,28 +32,33 @@ export const GameInfo = () => {
     }
   };
   return (
-    <section className="gameInfo-block">
-      {game && game.length >= 0
-        ? game.map((item) => (
-            <GameInfoDescription
-              key={item.id}
-              name={item.name}
-              price={item.price}
-              image={item.image_url}
-              publisher={item.primary_publisher.name}
-              year={item.year_published}
-              time={item.playtime}
-              players={item.players}
-              rank={item.rank}
-              url={item.official_url}
-              addToCart={addToCart}
-              item={item}
-              isItemInCart={cart.some((game) => {
-                return game.id === item.id;
-              })}
-            />
-          ))
-        : null}
-    </section>
+    // <section className="gameInfo-block">
+    <Container maxWidth="xl">
+      <div className="gameInfo-container">
+        {game && game.length >= 0
+          ? game.map((item) => (
+              <GameInfoDescription
+                key={item.id}
+                name={item.name}
+                price={item.price === "0.00" ? item.price_uk : item.price}
+                image={item.image_url}
+                publisher={item.primary_publisher.name}
+                year={item.year_published}
+                time={item.playtime}
+                players={item.players}
+                age={item.min_age}
+                rank={item.average_user_rating}
+                url={item.official_url}
+                addToCart={addToCart}
+                item={item}
+                isItemInCart={cart.some((game) => {
+                  return game.id === item.id;
+                })}
+              />
+            ))
+          : null}
+      </div>
+    </Container>
+    // </section>
   );
 };

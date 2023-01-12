@@ -91,7 +91,7 @@ export const PaginationBar = ({ category }) => {
                   <SearchedGames
                     id={item.id}
                     name={item.name}
-                    price={item.price}
+                    price={item.price === "0.00" ? item.price_uk : item.price}
                     image={item.image_url}
                     item={item}
                     addToCart={addToCart}

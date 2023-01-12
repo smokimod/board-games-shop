@@ -1,9 +1,9 @@
 import React from "react";
 import "../../../styles/mainPageStyles/ActualRealises.css";
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { NavLink } from "react-router-dom";
 
-export const ActualItem = ({ id, name, price, image, description }) => {
+export const ActualGamesList = ({ id, name, price, image, description }) => {
   return (
     <Grid item xs={6} sm={6} md={3} lg={2.4}>
       <div className="card">

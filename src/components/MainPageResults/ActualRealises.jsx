@@ -1,8 +1,7 @@
 import React from "react";
 import "../../styles/mainPageStyles/ActualRealises.css";
 import { useSelector } from "react-redux";
-import { NavLink } from "react-router-dom";
-import { ActualItem } from "./mainPage-children/ActualGamesList";
+import { ActualGamesList } from "./mainPage-children/ActualGamesList";
 import { Container, Grid } from "@mui/material";
 
 export const ActualRealises = () => {
@@ -34,11 +33,11 @@ export const ActualRealises = () => {
       ? games.slice(7, 17).map((item) => {
           return (
             <React.Fragment key={item.id}>
-              <ActualItem
+              <ActualGamesList
                 id={item.id}
                 name={item.name}
                 image={item.image_url}
-                price={item.price}
+                price={item.price === "0.00" ? item.price_uk : item.price}
                 description={item.description_preview}
               />
             </React.Fragment>
