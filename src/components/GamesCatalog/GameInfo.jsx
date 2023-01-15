@@ -32,8 +32,7 @@ export const GameInfo = () => {
     }
   };
   return (
-    // <section className="gameInfo-block">
-    <Container maxWidth="xl">
+    <section className="gameInfo-block">
       <div className="gameInfo-container">
         {game && game.length >= 0
           ? game.map((item) => (
@@ -58,7 +57,6 @@ export const GameInfo = () => {
             ))
           : null}
       </div>
-    </Container>
-    // </section>
+    </section>
   );
 };

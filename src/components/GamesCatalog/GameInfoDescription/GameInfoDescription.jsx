@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
 import "./GameInfoDescription.css";
 
@@ -20,7 +20,7 @@ export const GameInfoDescription = ({
   console.log(item);
 
   return (
-    <div className="game-info">
+    <Container>
       <div className="game-info-head">
         <div className="game-img-container">
           <img
@@ -43,16 +43,16 @@ export const GameInfoDescription = ({
               <i className="child icon"></i>
               {age} age
             </span>
-            <span>
+            <span className="info-item">
               <i className="users icon"></i>
               {players}
             </span>
-            <span>
+            <span className="info-item">
               <i className="clock outline icon"></i>
               {time} min
             </span>
 
-            <span>
+            <span className="info-item">
               <i className="star icon"></i>
               {rank.toFixed(2)}
             </span>
@@ -81,8 +81,7 @@ export const GameInfoDescription = ({
           </div>
         </div>
       </div>
-      {/* <div className="game-description">{item.description_preview}</div> */}
-      <Box>{item.description_preview}</Box>
-    </div>
+      <div className="game-description">{item.description_preview}</div>
+    </Container>
   );
 };

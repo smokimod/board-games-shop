@@ -36,7 +36,7 @@
   font-size: 3rem !important;
 }
 .additional-info {
-  width: 70%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -54,20 +54,84 @@
   font-weight: 800;
   font-size: 1.5rem;
 }
-@media (max-width: 1480px) {
-  .game-info {
-    margin: 30px;
-    max-width: 1480px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
+@media (max-width: 1240px) {
   .game-description {
     text-align: justify;
     padding: 30px 0;
     margin: 20px 0;
     font-size: 1.2rem;
     letter-spacing: 0.5px;
+  }
+  .additional-info span {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 1135px) {
+  .game-description {
+    text-align: justify;
+    padding: 30px 0;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+}
+@media (max-width: 950px) {
+  .additional-info {
+    width: 80%;
+  }
+  .additional-info span {
+    font-size: 1.2rem;
+  }
+  .game-info-head {
+    display: flex;
+    flex-direction: column;
+  }
+  .game-img-container {
+    margin-right: 0px;
+  }
+  .game-char {
+    margin-top: 10px;
+    height: 280px;
+  }
+}
+@media (max-width: 640px) {
+  .additional-info {
+    width: 100%;
+  }
+  .game-char {
+    margin-top: 10px;
+    height: 280px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+  }
+  .ui.dividing.header {
+    font-size: 2rem !important;
+  }
+  .stock {
+    font-size: 1.4rem;
+  }
+  .price {
+    font-size: 1.2rem;
+  }
+  .game-description {
+    text-align: justify;
+    padding: 30px 0;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+}
+@media (min-width: 360px) and (max-width: 560px) {
+  .additional-info {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .additional-info span {
+    padding: 5px 2px;
+    font-size: 1.1rem;
+  }
+  .stock {
+    font-size: 1.3rem;
   }
 }
