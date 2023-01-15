@@ -14,13 +14,13 @@ import {
   Toolbar,
   Typography,
   Stack,
-  Button,
   TextField,
   InputAdornment,
   Badge,
   useScrollTrigger,
   Slide,
 } from "@mui/material";
+import { GoogleAuth } from "../../GoogleAuth";
 
 function HideOnScroll({ children }) {
   const trigger = useScrollTrigger();
@@ -71,7 +71,12 @@ export const Header = ({ handleMouseOver, isHovering }) => {
               Border Games Shop
             </NavLink>
           </Typography>
-          <Stack direction="row" alignItems="center" spacing={3} sx={{ m: 1 }}>
+          <Stack
+            direction="row"
+            alignItems="center"
+            spacing={0.7}
+            sx={{ m: 1 }}
+          >
             <TextField
               component="form"
               size="large"
@@ -115,10 +120,7 @@ export const Header = ({ handleMouseOver, isHovering }) => {
             <Box display={{ xs: "none", sm: "block" }}>
               {isHovering && <CartHeaderIcon />}
             </Box>
-
-            <Button color="inherit" size="large" style={{ fontSize: "18px" }}>
-              login
-            </Button>
+            <GoogleAuth />
           </Stack>
         </Toolbar>
       </AppBar>

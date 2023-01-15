@@ -85,7 +85,13 @@ export const PopularGamesChildren = () => {
           }
         >
           <button className="circular medium ui button yellow">
-            <NavLink className="">Show Info</NavLink>
+            <NavLink
+              to={`/currentGame/${
+                games && games.length > 0 ? games[0].id : ""
+              }`}
+            >
+              Show Info
+            </NavLink>
           </button>
         </div>
       </div>

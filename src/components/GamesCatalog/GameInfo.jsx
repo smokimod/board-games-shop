@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { cartHolder, cartDeleter } from "../../Redux/reducers/cartReducers";
 import { GameInfoDescription } from "./GameInfoDescription/GameInfoDescription";
-import { Container } from "@mui/system";
 
 export const GameInfo = () => {
   const dispatch = useDispatch();
@@ -26,11 +25,14 @@ export const GameInfo = () => {
   const addToCart = (item) => {
     const isItemInCart = cart.some((game) => game.id === item.id);
     if (isItemInCart) {
-      dispatch(cartDeleter(item.id));
+      dispatch(cartDeleter(item));
     } else {
       dispatch(cartHolder(item));
     }
   };
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
   return (
     <section className="gameInfo-block">
       <div className="gameInfo-container">

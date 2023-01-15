@@ -68,7 +68,6 @@ export const PaginationBar = ({ category }) => {
               return a.min_playtime - b.min_playtime;
             });
           }
-          console.log(data.games);
           setPageQty(Math.ceil(data.count / 15));
           setSkip(page * 15 - 15);
 

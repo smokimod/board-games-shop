@@ -1,72 +1,56 @@
-import React from "react";
-import { connect } from "react-redux";
-import { signIn, signOut } from "./Redux/actions/googleAuthActions";
+import React, { useEffect, useState } from "react";
+import jwt_decode from "jwt-decode";
+const clientId =
+  "434607980919-1l11g0ij8onhnsfth53dh45ifoh9ubrt.apps.googleusercontent.com";
 
-class GoogleAuth extends React.Component {
-  componentDidMount() {
-    window.gapi.load("client:auth2", () => {
-      window.gapi.client
-        .init({
-          clientId:
-            "434607980919-1l11g0ij8onhnsfth53dh45ifoh9ubrt.apps.googleusercontent.com",
-          scope: "email",
-          plugin_name: "App Name that you used in google developer console API",
-        })
-        .then(() => {
-          this.auth = window.gapi.auth2.getAuthInstance();
-          this.onAuthChange(this.auth.isSignedIn.get());
-          this.auth.isSignedIn.listen(this.onAuthChange);
-        });
+export const GoogleAuth = () => {
+  const [user, setUser] = useState(
+    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {}
+  );
+  console.log(user);
+  function handleCallBackResponse(response) {
+    let userObject = jwt_decode(response.credential);
+    setUser(userObject);
+  }
+
+  function handleSignOut() {
+    setUser({});
+  }
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(user));
+  }, [user]);
+  useEffect(() => {
+    /*global google*/
+    google.accounts.id.initialize({
+      client_id: clientId,
+      callback: handleCallBackResponse,
     });
-  }
-
-  onAuthChange = (isSignedIn) => {
-    isSignedIn
-      ? this.props.signIn(this.auth.currentUser.get().getId())
-      : this.props.signOut();
-  };
-
-  onSignInClick = () => {
-    this.auth.signIn();
-  };
-
-  onSignOutClick = () => {
-    this.auth.signOut();
-  };
-
-  renderAuthButton() {
-    if (this.props.isSignedIn === null) {
-      return null;
-    } else if (this.props.isSignedIn === true) {
-      return (
-        <button
-          onClick={this.onSignOutClick}
-          className="ui red button"
-          tabIndex="0"
+    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+      type: "standard",
+      shape: "pill",
+      theme: "filled_black",
+      text: "signin_with",
+      size: "medium",
+      locale: "en",
+      logo_alignment: "left",
+      max_width: "300px",
+    });
+  }, [user]);
+  return (
+    <div>
+      {Object.keys(user).length === 0 ? (
+        <div id="signInDiv"></div>
+      ) : (
+        <div
+          color="inherit"
+          id="signout_button"
+          onClick={(e) => handleSignOut(e)}
+          size="large"
+          style={{ fontSize: "18px", cursor: "pointer" }}
         >
-          <div className="visible content">Sign Out</div>
-        </button>
-      );
-    } else {
-      return (
-        <button
-          onClick={this.onSignInClick}
-          className="ui red button"
-          tabIndex="0"
-        >
-          <div className="visible content">Sign In</div>
-        </button>
-      );
-    }
-  }
-
-  render() {
-    return <>{this.renderAuthButton()}</>;
-  }
-}
-const mapStateToprops = (state) => {
-  return {
-    isSignedIn: state.auth.isSignedIn,
-  };
+          LogOut
+        </div>
+      )}
+    </div>
+  );
 };
-export default connect(mapStateToprops, { signIn, signOut })(GoogleAuth);

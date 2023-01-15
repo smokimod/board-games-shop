@@ -16,13 +16,13 @@ export const SearchResults = () => {
   const handleChange = (event) => {
     setCategory(event.target.value);
   };
-  const arr = [1, 2, 3].map((i) => {
+  const mechanics = [1, 2, 3].map((i) => {
     return (
       <div className="ui huge link list" key={i}>
-        <div className="active item">Home</div>
-        <NavLink className="item">About</NavLink>
-        <NavLink className="item">Works</NavLink>
-        <NavLink className="item">Team</NavLink>
+        <div className="active item">Area control</div>
+        <NavLink className="item">Cards engine</NavLink>
+        <NavLink className="item">Party games</NavLink>
+        <NavLink className="item">Strategie</NavLink>
       </div>
     );
   });
@@ -52,7 +52,7 @@ export const SearchResults = () => {
             </Box>
             <h2>Search By </h2>
           </div>
-          {arr}
+          {mechanics}
         </div>
         <div className="search-results">
           <div className="results-info">

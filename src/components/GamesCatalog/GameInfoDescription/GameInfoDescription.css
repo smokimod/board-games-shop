@@ -121,7 +121,7 @@
     letter-spacing: 0.5px;
   }
 }
-@media (min-width: 360px) and (max-width: 560px) {
+@media (min-width: 3px) and (max-width: 560px) {
   .additional-info {
     width: 100%;
     display: flex;
