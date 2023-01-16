@@ -13,8 +13,8 @@ import { ModalCartItems } from "./CartItems/ModalCartItems";
 export const MyCart = () => {
   const [modal, setModal] = useState(false);
   const cart = useSelector((state) => state.cart.itemsCart);
+  const isAuth = useSelector((state) => state.auth.isSignedIn);
   const dispatch = useDispatch();
-
   const increase = (item) => {
     dispatch(cartQuantityAdd(item));
   };
@@ -43,13 +43,24 @@ export const MyCart = () => {
           <div className="your-cart">
             <h1>Your Cart</h1> <span></span>
           </div>
-          <div className="ui bottom attached warning message">
-            <i className="exclamation triangle big icon"></i>
-            <span>
-              For futher purchases and status tracking you must be authorized on
-              website, we are higly recomend you to sign in.
-            </span>
-          </div>
+
+          {isAuth ? (
+            <div className="ui positive message">
+              <i className="close icon"></i>
+              <div className="header">You're sign in!</div>
+              <p>
+                Now you <b>can buy</b> many games
+              </p>
+            </div>
+          ) : (
+            <div className="ui bottom attached warning message">
+              <i className="exclamation triangle big icon"></i>
+              <span>
+                For futher purchases and status tracking you must be authorized
+                on website, we are higly recomend you to sign in.
+              </span>
+            </div>
+          )}
           <table className="ui fluid stackable table">
             <thead>
               <tr>

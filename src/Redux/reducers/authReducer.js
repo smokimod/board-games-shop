@@ -1,6 +1,8 @@
 const INITIAL_STATE = {
-  isSignedIn: null,
-  userId: null,
+  isSignedIn: localStorage.getItem("user") === null ? false : true,
+  userId: localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : null,
 };
 const SIGN_IN = "SIGN_IN";
 const SIGN_OUT = "SIGN_OUT";
@@ -15,3 +17,12 @@ export const authReducer = (state = INITIAL_STATE, action) => {
       return state;
   }
 };
+
+export const signIn = (payload) => ({
+  type: SIGN_IN,
+  payload,
+});
+export const signOut = (payload) => ({
+  type: SIGN_OUT,
+  payload,
+});

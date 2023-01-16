@@ -12,6 +12,8 @@ const clientId = "client_id=VqVYih77GT";
 export const PaginationBar = ({ category }) => {
   const sample = useSelector((state) => state.sample.value);
   const cart = useSelector((state) => state.cart.itemsCart);
+  const authInfo = useSelector((state) => state.auth.userId);
+
   const location = useLocation();
   const dispatch = useDispatch();
   const { title } = useParams();
@@ -29,9 +31,11 @@ export const PaginationBar = ({ category }) => {
       dispatch(cartHolder(item));
     }
   };
+
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
+    localStorage.setItem("user", JSON.stringify(authInfo));
+  }, [cart, authInfo]);
 
   useEffect(() => {
     const getRequest = () => {

@@ -1,46 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import jwt_decode from "jwt-decode";
-const clientId =
-  "434607980919-1l11g0ij8onhnsfth53dh45ifoh9ubrt.apps.googleusercontent.com";
+import { useDispatch, useSelector } from "react-redux";
+import { signIn, signOut } from "./Redux/reducers/authReducer";
+import { cartClear } from "./Redux/reducers/cartReducers";
+import { GoogleLogin } from "@react-oauth/google";
 
 export const GoogleAuth = () => {
-  const [user, setUser] = useState(
-    localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : {}
-  );
-  console.log(user);
-  function handleCallBackResponse(response) {
-    let userObject = jwt_decode(response.credential);
-    setUser(userObject);
-  }
+  const authInfo = useSelector((state) => state.auth.userId);
+  const isAuth = useSelector((state) => state.auth.isSignedIn);
+  const dispatch = useDispatch();
 
   function handleSignOut() {
-    setUser({});
+    dispatch(signOut(null));
   }
   useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(user));
-  }, [user]);
-  useEffect(() => {
-    /*global google*/
-    google.accounts.id.initialize({
-      client_id: clientId,
-      callback: handleCallBackResponse,
-    });
-    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-      type: "standard",
-      shape: "pill",
-      theme: "filled_black",
-      text: "signin_with",
-      size: "medium",
-      locale: "en",
-      logo_alignment: "left",
-      max_width: "300px",
-    });
-  }, [user]);
+    function clearAfterLogout() {
+      return isAuth ? null : dispatch(cartClear([]));
+    }
+    clearAfterLogout();
+    localStorage.setItem("user", JSON.stringify(authInfo));
+  }, [authInfo, isAuth, dispatch]);
+
   return (
     <div>
-      {Object.keys(user).length === 0 ? (
-        <div id="signInDiv"></div>
-      ) : (
+      {authInfo ? (
         <div
           color="inherit"
           id="signout_button"
@@ -50,6 +33,16 @@ export const GoogleAuth = () => {
         >
           LogOut
         </div>
+      ) : (
+        <GoogleLogin
+          onSuccess={(credentialResponse) => {
+            let userObject = jwt_decode(credentialResponse.credential);
+            dispatch(signIn(userObject));
+          }}
+          onError={() => {
+            console.log("Login Failed");
+          }}
+        />
       )}
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 import "../../../styles/SearhResulets.css";
 
 export const SearchedGames = ({
@@ -11,6 +12,8 @@ export const SearchedGames = ({
   addToCart,
   isItemInCart,
 }) => {
+  const isAuth = useSelector((state) => state.auth.isSignedIn);
+
   return (
     <div className="ui yellow fluid card">
       <div className="image">
@@ -54,6 +57,7 @@ export const SearchedGames = ({
       </div>
       <div className="extra content">
         <button
+          disabled={isAuth ? "" : "disabled"}
           onClick={() => {
             addToCart(item);
           }}

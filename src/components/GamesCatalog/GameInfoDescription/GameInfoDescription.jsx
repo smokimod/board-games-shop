@@ -1,5 +1,6 @@
 import { Container } from "@mui/material";
 import React from "react";
+import { useSelector } from "react-redux";
 import "./GameInfoDescription.css";
 
 export const GameInfoDescription = ({
@@ -17,8 +18,7 @@ export const GameInfoDescription = ({
   addToCart,
   isItemInCart,
 }) => {
-  console.log(item);
-
+  const isAuth = useSelector((state) => state.auth.isSignedIn);
   return (
     <Container>
       <div className="game-info-head">
@@ -67,6 +67,7 @@ export const GameInfoDescription = ({
           <div className="price">${price}</div>
           <div className="info-buy">
             <button
+              disabled={isAuth ? "" : "disabled"}
               onClick={() => {
                 addToCart(item);
               }}
