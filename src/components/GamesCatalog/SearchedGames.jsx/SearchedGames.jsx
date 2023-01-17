@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import "../../../styles/SearhResulets.css";
+import "../../../styles/SearchedGames/SearhResulets.css";
 
 export const SearchedGames = ({
   id,

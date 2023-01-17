@@ -69,7 +69,8 @@
   background: url("../images/autumn-park-leaves-sun-1053614486.jpg"), no-repeat;
   background-size: cover;
 }
-.actual-realises-block.winter {
+.actual-realises-block,
+.winter {
   background: url("../images/winter_time_with_a_lot_of_fun_1.jpg"), no-repeat;
   background-size: cover;
 }

@@ -1,36 +1,32 @@
-import React from "react";
-import "../../styles/mainPageStyles/ActualRealises.css";
+import React, { useState, useEffect } from "react";
+import "../../styles/MainPageResults/ActualRealises.css";
 import { useSelector } from "react-redux";
 import { ActualGamesList } from "./mainPage-children/ActualGamesList";
 import { Container, Grid } from "@mui/material";
 
 export const ActualRealises = () => {
-  const current = new Date();
-  const month = current.toLocaleString("default", { month: "long" });
-  const date = `${current.getDate()}-${month}, ${current.getFullYear()}`;
-  const games = useSelector((state) => state.games.games);
+  const [currentDate, setCurrentDate] = useState("");
+  const games = useSelector((state) => state.actual.games);
+  const date = new Date().toLocaleString("en-US", { month: "long" });
+  useEffect(() => {
+    function seasons() {
+      if (date === "September" || date === "October" || date === "November") {
+        return setCurrentDate("autumn");
+      }
+      if (date === "December" || date === "February" || date === "January") {
+        return setCurrentDate("winter");
+      }
+      if (date === "Marth" || date === "April" || date === "May") {
+        return setCurrentDate("spring");
+      }
 
-  const getMonth = () => {
-    if (month === "September" || month === "October" || month === "November") {
-      return "autumn";
-    } else if (
-      month === "December" ||
-      month === "декабрь" ||
-      month === "Junuary" ||
-      month === "январь" ||
-      month === "Febuary" ||
-      month === "февраль"
-    ) {
-      return "winter";
-    } else if (month === "Marth" || month === "April" || month === "May") {
-      return "spring";
+      return "summer";
     }
-    return "summer";
-  };
-
+    seasons();
+  }, [date, currentDate]);
   const actualGames =
     games && games.length > 0
-      ? games.slice(7, 17).map((item) => {
+      ? games.slice(0, 10).map((item) => {
           return (
             <React.Fragment key={item.id}>
               <ActualGamesList
@@ -46,7 +42,7 @@ export const ActualRealises = () => {
       : null;
 
   return (
-    <div className={`actual-realises-block ${getMonth()}`}>
+    <div className={`actual-realises-block ${currentDate}`}>
       <div className="actual-realises-container">
         <div className="actual-realises-info">
           <div className="actual-heading">

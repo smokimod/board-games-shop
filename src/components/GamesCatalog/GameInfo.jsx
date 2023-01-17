@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/GameInfo.css";
+import "../../styles/SearchedGames/GameInfo.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";

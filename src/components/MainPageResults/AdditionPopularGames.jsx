@@ -4,11 +4,11 @@ import { useSelector } from "react-redux";
 import { GameItems } from "./mainPage-children/GameItems";
 
 export const AdditionPopularGames = () => {
-  const games = useSelector((state) => state.games.games);
+  const games = useSelector((state) => state.popular.games);
 
   const gamesList =
     games && games.length > 0
-      ? games.slice(4, 10).map((item, index) => {
+      ? games.slice(0, 6).map((item, index) => {
           return (
             <React.Fragment key={item.id}>
               <GameItems

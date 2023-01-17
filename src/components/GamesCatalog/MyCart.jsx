@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/MyCart.css";
+import "../../styles/SearchedGames/MyCart.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   cartDeleter,

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../../styles/MyCart.css";
+import "../../../styles/SearchedGames/MyCart.css";
 
 export const CartItems = ({
   id,

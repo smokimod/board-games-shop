@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../styles/mainPageStyles/ActualRealises.css";
+import "../../../styles/MainPageResults/ActualRealises.css";
 import { Grid } from "@mui/material";
 import { NavLink } from "react-router-dom";
 

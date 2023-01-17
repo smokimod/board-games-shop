@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/mainPageStyles/PopularGames.css";
+import "../../styles/MainPageResults/PopularGames.css";
 import { PopularGamesChildren } from "./mainPage-children/PopularGamesChildren";
 
 export const PopularGames = () => {

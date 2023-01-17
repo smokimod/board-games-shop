@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/mainPageStyles/Header.css";
+import "../../styles/Layout/Header.css";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import CasinoIcon from "@mui/icons-material/Casino";
@@ -20,7 +20,7 @@ import {
   useScrollTrigger,
   Slide,
 } from "@mui/material";
-import { GoogleAuth } from "../../GoogleAuth";
+import { GoogleAuth } from "../GoogleAuth/GoogleAuth";
 
 function HideOnScroll({ children }) {
   const trigger = useScrollTrigger();
@@ -53,10 +53,10 @@ export const Header = ({ handleMouseOver, isHovering }) => {
         <Toolbar>
           <NavLink to="/" style={{ color: "black" }}>
             <IconButton
-              size="large"
               edge="start"
               color="inherit"
               aria-label="logo"
+              fontSize="inherit"
             >
               <CasinoIcon />
             </IconButton>
@@ -68,15 +68,12 @@ export const Header = ({ handleMouseOver, isHovering }) => {
             display={{ xs: "none", sm: "block" }}
           >
             <NavLink to="/" style={{ color: "black" }}>
-              Border Games Shop
+              <header className="four">
+                <h2>Border Games Shop</h2>
+              </header>
             </NavLink>
           </Typography>
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={0.7}
-            sx={{ m: 1 }}
-          >
+          <Stack direction="row" alignItems="center" spacing={1} sx={{ m: 1 }}>
             <TextField
               component="form"
               size="large"

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/SearhResulets.css";
+import "../../styles/SearchedGames/SearhResulets.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { PaginationBar } from "./Pagination";
