@@ -1,7 +1,7 @@
 import React from "react";
+import "../../../styles/MainPageResults/CartHeaderIcon.css";
 import { useDispatch, useSelector } from "react-redux";
 import { cartClear } from "../../../Redux/reducers/cartReducers";
-import "../../../styles/mainPageStyles/CartHeaderIcon.css";
 import { CartIconGames } from "./CartIconGames/CartIconGames";
 
 export const CartHeaderIcon = ({ handleMouseOver }) => {
