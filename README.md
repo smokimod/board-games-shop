@@ -1,4 +1,4 @@
-<img src="/src/styles/images/HomePage.jpg" height="100" width="100%" align="center"/></h1>
+<img src="/src/styles/images/HomePage.jpg" height="550" width="100%" align="center"/></h1>
 
 <h1 align="center">Board games shop 
 <img src="/src/styles/images/awsfargate.svg" height="32"/></h1>
