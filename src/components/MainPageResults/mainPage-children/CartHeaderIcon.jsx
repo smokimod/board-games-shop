@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartClear } from "../../../Redux/reducers/cartReducers";
 import { CartIconGames } from "./CartIconGames/CartIconGames";
 
-export const CartHeaderIcon = ({ handleMouseOver }) => {
+export const CartHeaderIcon = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.itemsCart);
   const totalPrice = cart.reduce(
