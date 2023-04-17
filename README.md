@@ -3,7 +3,7 @@
 <h1 align="center">Board games shop 
 <img src="/src/styles/images/awsfargate.svg" height="32"/></h1>
 <h3 align="center">Pet project</h3>
-<a href="board-games-shop-y44b-cojcap69j-smokimod.vercel.app">Demo</a>
+<a href="https://board-games-shop.vercel.app/">Demo</a>
 board-games-shop-y44b-cojcap69j-smokimod.vercel.app
 <h1>About</h1>
 board-games-shop-y44b-cojcap69j-smokimod.vercel.app
