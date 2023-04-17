@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
 import React from "react";
 import { useSelector } from "react-redux";
+
 import "./GameInfoDescription.css";
 
 export const GameInfoDescription = ({

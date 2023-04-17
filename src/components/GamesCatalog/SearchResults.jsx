@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import "../../styles/SearchedGames/SearhResulets.css";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { PaginationBar } from "./Pagination";
+
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+
+import "../../styles/SearchedGames/SearhResulets.css";
 
 export const SearchResults = () => {
   const sample = useSelector((state) => state.sample.value);

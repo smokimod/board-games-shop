@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import "../../styles/MainPageResults/ActualRealises.css";
 import { useSelector } from "react-redux";
 import { ActualGamesList } from "./mainPage-children/ActualGamesList";
 import { Container, Grid } from "@mui/material";
+
+import "../../styles/MainPageResults/ActualRealises.css";
 
 export const ActualRealises = () => {
   const [currentDate, setCurrentDate] = useState("");

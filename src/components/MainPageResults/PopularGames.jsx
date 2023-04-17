@@ -1,6 +1,8 @@
 import React from "react";
-import "../../styles/MainPageResults/PopularGames.css";
+
 import { PopularGamesChildren } from "./mainPage-children/PopularGamesChildren";
+
+import "../../styles/MainPageResults/PopularGames.css";
 
 export const PopularGames = () => {
   return (

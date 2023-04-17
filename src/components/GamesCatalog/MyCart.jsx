@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/SearchedGames/MyCart.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
   cartDeleter,
@@ -9,6 +8,8 @@ import {
 
 import { CartItems } from "./CartItems/CartItems";
 import { ModalCartItems } from "./CartItems/ModalCartItems";
+
+import "../../styles/SearchedGames/MyCart.css";
 
 export const MyCart = () => {
   const [modal, setModal] = useState(false);

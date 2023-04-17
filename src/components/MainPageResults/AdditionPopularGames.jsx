@@ -1,7 +1,9 @@
 import React from "react";
-import "../../styles/MainPageResults/AdditionalPopularGames.css";
 import { useSelector } from "react-redux";
+
 import { GameItems } from "./mainPage-children/GameItems";
+
+import "../../styles/MainPageResults/AdditionalPopularGames.css";
 
 export const AdditionPopularGames = () => {
   const games = useSelector((state) => state.popular.games);

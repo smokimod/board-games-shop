@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/Layout/Header.css";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import CasinoIcon from "@mui/icons-material/Casino";
@@ -20,7 +19,9 @@ import {
   useScrollTrigger,
   Slide,
 } from "@mui/material";
-import { GoogleAuth } from "../GoogleAuth/GoogleAuth";
+import { GoogleAuth } from "../googleAuth/GoogleAuth";
+
+import "../../styles/Layout/Header.css";
 
 function HideOnScroll({ children }) {
   const trigger = useScrollTrigger();

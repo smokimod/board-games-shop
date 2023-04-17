@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Pagination, PaginationItem } from "@mui/material";
 import { useParams, NavLink, useLocation } from "react-router-dom";
+
+import { Loader } from "../Layout/loader/loader";
 import { cartHolder } from "../../Redux/reducers/cartReducers";
 import { cartDeleter } from "../../Redux/reducers/cartReducers";
 import { SearchedGames } from "./SearchedGames.jsx/SearchedGames";
-const clientId = "client_id=VqVYih77GT";
+import { SortCondition } from "./SortCondition";
 
 export const PaginationBar = ({ category }) => {
+  const clientId = "client_id=VqVYih77GT";
   const sample = useSelector((state) => state.sample.value);
   const cart = useSelector((state) => state.cart.itemsCart);
   const authInfo = useSelector((state) => state.auth.userId);
@@ -20,6 +23,8 @@ export const PaginationBar = ({ category }) => {
   const [games, setGames] = useState();
   const [skip, setSkip] = useState(0);
   const [pageQty, setPageQty] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(null);
   const [page, setPage] = useState(
     parseInt(location.search?.split("=")[1] || 1)
   );
@@ -32,59 +37,46 @@ export const PaginationBar = ({ category }) => {
     }
   };
 
+  console.log(loaded);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
     localStorage.setItem("user", JSON.stringify(authInfo));
   }, [cart, authInfo]);
 
   useEffect(() => {
-    const getRequest = () => {
+    try {
       axios
         .get(
           `https://api.boardgameatlas.com/api/search?name=${
             sample || title ? title : ""
           }&skip=${skip}&limit=15&exact=false&${clientId}`
         )
+
         .then(({ data }) => {
           setGames(data.games);
-          if (category === "lowtohigh") {
-            data.games.sort((a, b) => {
-              return a.price - b.price;
-            });
-          }
-          if (category === "hightolow") {
-            data.games.sort((a, b) => {
-              return b.price - a.price;
-            });
-          }
-          if (category === "rating") {
-            data.games.sort((a, b) => {
-              return a.rank - b.rank;
-            });
-          }
-          if (category === "hightime") {
-            data.games.sort((a, b) => {
-              return b.min_playtime - a.min_playtime;
-            });
-          }
-          if (category === "lowtime") {
-            data.games.sort((a, b) => {
-              return a.min_playtime - b.min_playtime;
-            });
-          }
+          SortCondition(data, category);
           setPageQty(Math.ceil(data.count / 15));
           setSkip(page * 15 - 15);
 
           if (Math.ceil(data.count / 15) < page) {
             setPage(1);
           }
-        })
-        .catch((error) => console.log(error.message));
-    };
-    getRequest();
-  }, [page, skip, pageQty, sample, title, category]);
+          setLoaded(true);
+        });
+    } catch (error) {
+      setLoaded(true);
+      setError(error);
+    }
+  }, [page, skip, pageQty, sample, title, category, setError, setLoaded]);
 
-  return (
+  return error ? (
+    <div className="error-background">
+      <i className="thumbs down outline icon"></i>
+      Opps...: {error.message}
+    </div>
+  ) : !loaded ? (
+    <Loader />
+  ) : (
     <>
       <div className="ui five doubling cards">
         {games && games.length > 0

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import "../../style.css";
+import { Outlet } from "react-router";
+
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-import { Outlet } from "react-router";
+
+import "../../style.css";
 
 export const Layout = () => {
   const [isHovering, setIsHovering] = useState(false);

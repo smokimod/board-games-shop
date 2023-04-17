@@ -1,7 +1,8 @@
 import React from "react";
-import "../../../styles/MainPageResults/ActualRealises.css";
 import { Grid } from "@mui/material";
 import { NavLink } from "react-router-dom";
+
+import "../../../styles/MainPageResults/ActualRealises.css";
 
 export const ActualGamesList = ({ id, name, price, image, description }) => {
   return (

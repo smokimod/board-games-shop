@@ -1,6 +1,7 @@
 import React from "react";
-import "../../styles/MainPageResults/SpecialDeals.css";
 import { SimpleSlider } from "./mainPage-children/SpecialSlider";
+
+import "../../styles/MainPageResults/SpecialDeals.css";
 
 export const SpecialDeals = () => {
   return (

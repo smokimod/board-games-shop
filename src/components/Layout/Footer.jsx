@@ -1,3 +1,4 @@
+import React from "react";
 import { Grid } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { IconButton } from "@mui/material";
@@ -5,7 +6,6 @@ import Link from "@mui/material/Link";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GoogleIcon from "@mui/icons-material/Google";
-import React from "react";
 
 export const Footer = () => {
   return (

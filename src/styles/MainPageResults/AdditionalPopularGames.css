@@ -1,8 +1,6 @@
 .additional-games-block {
   margin: 40px 60px;
   box-shadow: 2px 2px 5px rgb(241, 254, 0), -2px -2px 15px rgb(241, 254, 0);
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .additional-games-container {
   min-height: 550px;

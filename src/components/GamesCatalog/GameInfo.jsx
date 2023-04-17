@@ -1,25 +1,36 @@
 import React, { useEffect, useState } from "react";
-import "../../styles/SearchedGames/GameInfo.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
+import { Loader } from "../Layout/loader/loader";
 import { cartHolder, cartDeleter } from "../../Redux/reducers/cartReducers";
 import { GameInfoDescription } from "./GameInfoDescription/GameInfoDescription";
+
+import "../../styles/SearchedGames/GameInfo.css";
 
 export const GameInfo = () => {
   const dispatch = useDispatch();
   const { ids } = useParams();
+  const [loaded, setLoaded] = useState(false);
+  const [error, setError] = useState(null);
   const [game, setGame] = useState([]);
   const cart = useSelector((state) => state.cart.itemsCart);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.boardgameatlas.com/api/search?ids=${ids}&pretty=true&limit=1&client_id=VqVYih77GT`
-      )
-      .then((data) => {
-        setGame(data.data.games);
-      });
+    try {
+      axios
+        .get(
+          `https://api.boardgameatlas.com/api/search?ids=${ids}&pretty=true&limit=1&client_id=VqVYih77GT`
+        )
+        .then((data) => {
+          setGame(data.data.games);
+          setLoaded(true);
+        });
+    } catch (error) {
+      setLoaded(true);
+      setError(error);
+    }
   }, [ids]);
 
   const addToCart = (item) => {
@@ -33,7 +44,14 @@ export const GameInfo = () => {
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
-  return (
+  return error ? (
+    <div className="error-background">
+      <i className="thumbs down outline icon"></i>
+      Opps...: {error.message}
+    </div>
+  ) : !loaded ? (
+    <Loader />
+  ) : (
     <section className="gameInfo-block">
       <div className="gameInfo-container">
         {game && game.length >= 0

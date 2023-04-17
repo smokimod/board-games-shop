@@ -1,8 +1,10 @@
 import React from "react";
-import "../../../styles/MainPageResults/CartHeaderIcon.css";
 import { useDispatch, useSelector } from "react-redux";
+
 import { cartClear } from "../../../Redux/reducers/cartReducers";
 import { CartIconGames } from "./CartIconGames/CartIconGames";
+
+import "../../../styles/MainPageResults/CartHeaderIcon.css";
 
 export const CartHeaderIcon = () => {
   const dispatch = useDispatch();
