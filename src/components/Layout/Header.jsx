@@ -19,7 +19,7 @@ import {
   useScrollTrigger,
   Slide,
 } from "@mui/material";
-import { GoogleAuth } from "../googleAuth/GoogleAuth";
+import { GoogleAuth } from "../GoogleAuth/GoogleAuth";
 
 import "../../styles/Layout/Header.css";
 
