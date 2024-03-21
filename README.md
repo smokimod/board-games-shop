@@ -6,4 +6,4 @@
 <a href="https://board-games-shop.vercel.app/">Demo</a>
 <h1>About</h1>
 board-games-shop-y44b-cojcap69j-smokimod.vercel.app
-<p>This is a store for buying games based on ReactJS. The project uses Board Game Atlas API for receiving inforpation. There are uses the libraries such as React-redux/thuck, React-router-dom, react-slick, axios, MUI and others...  </p>
+<p>This is a store for buying board games. In the project uses Board Game Atlas API for receiving inforpation. technical stack: ReactJS, React-redux/thuck, React-router-dom, react-slick, axios, MUI and others...  </p>
